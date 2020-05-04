@@ -7,10 +7,11 @@ echo "================================="
 echo " ${rule}"
 echo "---------------------------------"
 echo " Running bazel query:"
+rm /tmp/t
 TARGET=//:ProjectRunner; /usr/bin/bazel cquery "deps($TARGET)" --nohost_deps --noimplicit_deps --output=build > /tmp/t 2> /dev/null
 echo "---------------------------------"
 echo " dependency: guava"
-echo " Need: name = com_google_guava_guava, artifact = com.google.guava:guava:18.0"
+echo " Need this or similar: name = com_google_guava_guava, artifact = com.google.guava:guava:18.0"
 echo "---------------------------------"
 grep guava /tmp/t && grep 'com\.google\.guava' /tmp/t && grep '18\.0' /tmp/t
 grepStatus=$?
