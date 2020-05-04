@@ -6,8 +6,8 @@ alias bazel='/usr/bin/bazel'
 echo "================================="
 echo " ${rule}"
 echo "---------------------------------"
-echo " Actual output:"
-TARGET=//:hello-lib; bazel cquery "deps($TARGET)" --nohost_deps --noimplicit_deps --output=build | tee /tmp/t
+echo " Running bazel query:"
+TARGET=//:hello-lib; bazel cquery "deps($TARGET)" --nohost_deps --noimplicit_deps --output=build > /tmp/t 2> /dev/null
 echo "---------------------------------"
 echo " dependency: guava"
 echo " Need: url = https://repo1.maven.org/maven2/com/google/guava/guava/28.1-jre/guava-28.1-jre.jar"
@@ -17,6 +17,5 @@ grepStatus=$?
 if [ $grepStatus -eq 0 ]; then
 	echo Seems to be SUCCESS
 else
-	echo Seems to be FAIURE
+	echo Seems to be FAILURE
 fi
-echo "Should be: FAILS"
