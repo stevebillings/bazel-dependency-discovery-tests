@@ -1,0 +1,18 @@
+load(
+    "@rules_haskell//haskell:defs.bzl",
+    "haskell_test",
+)
+
+package(default_testonly = 1)
+
+haskell_test(
+    name = "binary-with-prebuilt",
+    srcs = ["Main.hs"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//tests/hackage:base",
+        "//tests/hackage:template-haskell",
+        "@stackage//:streaming",
+        "@stackage//:void",
+    ],
+)

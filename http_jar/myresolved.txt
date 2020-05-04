@@ -1,0 +1,1567 @@
+resolved = [
+    {
+        "original_rule_class": "bind",
+        "original_attributes": {
+            "name": "android/crosstool",
+            "actual": "@bazel_tools//tools/cpp:toolchain"
+        },
+        "native": "bind(name = \"android/crosstool\", actual = \"@bazel_tools//tools/cpp:toolchain\")"
+    },
+    {
+        "original_rule_class": "bind",
+        "original_attributes": {
+            "name": "android/dx_jar_import",
+            "actual": "@bazel_tools//tools/android:no_android_sdk_repository_error"
+        },
+        "native": "bind(name = \"android/dx_jar_import\", actual = \"@bazel_tools//tools/android:no_android_sdk_repository_error\")"
+    },
+    {
+        "original_rule_class": "bind",
+        "original_attributes": {
+            "name": "android/sdk",
+            "actual": "@bazel_tools//tools/android:poison_pill_android_sdk"
+        },
+        "native": "bind(name = \"android/sdk\", actual = \"@bazel_tools//tools/android:poison_pill_android_sdk\")"
+    },
+    {
+        "original_rule_class": "bind",
+        "original_attributes": {
+            "name": "android_ndk_for_testing",
+            "actual": "//:dummy"
+        },
+        "native": "bind(name = \"android_ndk_for_testing\", actual = \"//:dummy\")"
+    },
+    {
+        "original_rule_class": "bind",
+        "original_attributes": {
+            "name": "android_sdk_for_testing",
+            "actual": "//:dummy"
+        },
+        "native": "bind(name = \"android_sdk_for_testing\", actual = \"//:dummy\")"
+    },
+    {
+        "original_rule_class": "local_repository",
+        "original_attributes": {
+            "name": "bazel_tools",
+            "path": "/root/.cache/bazel/_bazel_root/install/84defa6eb1e9416bf92d6f89ab2d4f31/embedded_tools"
+        },
+        "native": "local_repository(name = \"bazel_tools\", path = __embedded_dir__ + \"/\" + \"embedded_tools\")"
+    },
+    {
+        "original_rule_class": "bind",
+        "original_attributes": {
+            "name": "cc_toolchain",
+            "actual": "@local_config_cc//:toolchain"
+        },
+        "native": "bind(name = \"cc_toolchain\", actual = \"@local_config_cc//:toolchain\")"
+    },
+    {
+        "original_rule_class": "bind",
+        "original_attributes": {
+            "name": "databinding_annotation_processor",
+            "actual": "@bazel_tools//tools/android:empty"
+        },
+        "native": "bind(name = \"databinding_annotation_processor\", actual = \"@bazel_tools//tools/android:empty\")"
+    },
+    {
+        "original_rule_class": "bind",
+        "original_attributes": {
+            "name": "has_androidsdk",
+            "actual": "@bazel_tools//tools/android:always_false"
+        },
+        "native": "bind(name = \"has_androidsdk\", actual = \"@bazel_tools//tools/android:always_false\")"
+    },
+    {
+        "original_rule_class": "local_repository",
+        "original_attributes": {
+            "name": "java_tooling",
+            "path": "."
+        },
+        "native": "local_repository(name = \"java_tooling\", path = \".\")"
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+        "definition_information": "Call stack for the definition of repository 'rules_java' which is a http_archive (rule definition at /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/http.bzl:292:16):\n - /root/home/steve/bootcamp/bazelcon-2019/2-java-tooling/WORKSPACE:11:1",
+        "original_attributes": {
+            "name": "rules_java",
+            "url": "https://github.com/bazelbuild/rules_java/releases/download/0.1.1/rules_java-0.1.1.tar.gz",
+            "sha256": "220b87d8cfabd22d1c6d8e3cdb4249abd4c93dcc152e0667db061fb1b957ee68"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+                "output_tree_hash": "4f6211a83c9d0a1a5b6a0b06938cd6083396ff892b8e407eb40e7d0b3bce233c",
+                "attributes": {
+                    "url": "https://github.com/bazelbuild/rules_java/releases/download/0.1.1/rules_java-0.1.1.tar.gz",
+                    "urls": [],
+                    "sha256": "220b87d8cfabd22d1c6d8e3cdb4249abd4c93dcc152e0667db061fb1b957ee68",
+                    "netrc": "",
+                    "canonical_id": "",
+                    "strip_prefix": "",
+                    "type": "",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0"
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "build_file_content": "",
+                    "workspace_file_content": "",
+                    "name": "rules_java"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+        "definition_information": "Call stack for the definition of repository 'bazel_skylib' which is a http_archive (rule definition at /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/http.bzl:292:16):\n - /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/utils.bzl:205:9\n - /tmp/bazel/output/external/rules_java/java/repositories.bzl:300:5\n - /tmp/bazel/output/external/rules_java/java/repositories.bzl:316:5\n - /root/home/steve/bootcamp/bazelcon-2019/2-java-tooling/WORKSPACE:23:1",
+        "original_attributes": {
+            "name": "bazel_skylib",
+            "url": "https://github.com/bazelbuild/bazel-skylib/releases/download/0.9.0/bazel_skylib-0.9.0.tar.gz",
+            "sha256": "1dde365491125a3db70731e25658dfdd3bc5dbdfd11b840b3e987ecf043c7ca0",
+            "type": "tar.gz"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+                "output_tree_hash": "a4d6b3782170f9ada205793457c20ec2188c11c5954bf45028e3297ab2430f92",
+                "attributes": {
+                    "url": "https://github.com/bazelbuild/bazel-skylib/releases/download/0.9.0/bazel_skylib-0.9.0.tar.gz",
+                    "urls": [],
+                    "sha256": "1dde365491125a3db70731e25658dfdd3bc5dbdfd11b840b3e987ecf043c7ca0",
+                    "netrc": "",
+                    "canonical_id": "",
+                    "strip_prefix": "",
+                    "type": "tar.gz",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0"
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "build_file_content": "",
+                    "workspace_file_content": "",
+                    "name": "bazel_skylib"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_jar",
+        "definition_information": "Call stack for the definition of repository 'guava' which is a http_jar (rule definition at /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/http.bzl:416:12):\n - /root/home/steve/bootcamp/bazelcon-2019/2-java-tooling/WORKSPACE:63:1",
+        "original_attributes": {
+            "name": "guava",
+            "sha256": "30beb8b8527bd07c6e747e77f1a92122c2f29d57ce347461a4a55eb26e382da4",
+            "url": "https://repo1.maven.org/maven2/com/google/guava/guava/28.1-jre/guava-28.1-jre.jar"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_jar",
+                "output_tree_hash": "1d4e9618ad6a31230d7ecf30cda80d0afb59d95b57568bd9abf27e05b9938e10",
+                "attributes": {
+                    "sha256": "30beb8b8527bd07c6e747e77f1a92122c2f29d57ce347461a4a55eb26e382da4",
+                    "url": "https://repo1.maven.org/maven2/com/google/guava/guava/28.1-jre/guava-28.1-jre.jar",
+                    "urls": [],
+                    "netrc": "",
+                    "name": "guava"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+        "definition_information": "Call stack for the definition of repository 'jdk8_linux' which is a http_archive (rule definition at /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/http.bzl:292:16):\n - /root/home/steve/bootcamp/bazelcon-2019/2-java-tooling/WORKSPACE:30:1",
+        "original_attributes": {
+            "name": "jdk8_linux",
+            "urls": [
+                "https://cdn.azul.com/zulu/bin/zulu8.38.0.13-ca-jdk8.0.212-linux_x64.tar.gz"
+            ],
+            "sha256": "568e7578f1b20b1e62a8ed2c374bad4eb0e75d221323ccfa6ba8d7bc56cf33cf",
+            "strip_prefix": "zulu8.38.0.13-ca-jdk8.0.212-linux_x64",
+            "build_file": "@local_jdk//:BUILD.bazel"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+                "output_tree_hash": "8506ba0fa2dfea94693a13fce9fa1c16c3c1e023b6e5d281ce6cb0aa2fb74798",
+                "attributes": {
+                    "url": "",
+                    "urls": [
+                        "https://cdn.azul.com/zulu/bin/zulu8.38.0.13-ca-jdk8.0.212-linux_x64.tar.gz"
+                    ],
+                    "sha256": "568e7578f1b20b1e62a8ed2c374bad4eb0e75d221323ccfa6ba8d7bc56cf33cf",
+                    "netrc": "",
+                    "canonical_id": "",
+                    "strip_prefix": "zulu8.38.0.13-ca-jdk8.0.212-linux_x64",
+                    "type": "",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0"
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "build_file": "@local_jdk//:BUILD.bazel",
+                    "build_file_content": "",
+                    "workspace_file_content": "",
+                    "name": "jdk8_linux"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+        "definition_information": "Call stack for the definition of repository 'jdk8_macos' which is a http_archive (rule definition at /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/http.bzl:292:16):\n - /root/home/steve/bootcamp/bazelcon-2019/2-java-tooling/WORKSPACE:40:1",
+        "original_attributes": {
+            "name": "jdk8_macos",
+            "urls": [
+                "https://cdn.azul.com/zulu/bin/zulu8.38.0.13-ca-jdk8.0.212-macosx_x64.tar.gz"
+            ],
+            "sha256": "64538f3eed34a298cc48168e89326fd323a55d801a3e6b2c3cc948effe124250",
+            "strip_prefix": "zulu8.38.0.13-ca-jdk8.0.212-macosx_x64",
+            "build_file": "@local_jdk//:BUILD.bazel"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+                "output_tree_hash": "d63d6fdb03db0e6d7198a90857a9e212c05d14b0d3b461a8571fff19af3af608",
+                "attributes": {
+                    "url": "",
+                    "urls": [
+                        "https://cdn.azul.com/zulu/bin/zulu8.38.0.13-ca-jdk8.0.212-macosx_x64.tar.gz"
+                    ],
+                    "sha256": "64538f3eed34a298cc48168e89326fd323a55d801a3e6b2c3cc948effe124250",
+                    "netrc": "",
+                    "canonical_id": "",
+                    "strip_prefix": "zulu8.38.0.13-ca-jdk8.0.212-macosx_x64",
+                    "type": "",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0"
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "build_file": "@local_jdk//:BUILD.bazel",
+                    "build_file_content": "",
+                    "workspace_file_content": "",
+                    "name": "jdk8_macos"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+        "definition_information": "Call stack for the definition of repository 'jdk8_windows' which is a http_archive (rule definition at /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/http.bzl:292:16):\n - /root/home/steve/bootcamp/bazelcon-2019/2-java-tooling/WORKSPACE:50:1",
+        "original_attributes": {
+            "name": "jdk8_windows",
+            "urls": [
+                "https://cdn.azul.com/zulu/bin/zulu8.38.0.13-ca-jdk8.0.212-win_x64.zip"
+            ],
+            "sha256": "f5367fc29485252e91d3d1d28b069277b7133dfa2e104fc181af4373267d3a82",
+            "strip_prefix": "zulu8.38.0.13-ca-jdk8.0.212-win_x64",
+            "build_file": "@local_jdk//:BUILD.bazel"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+                "output_tree_hash": "f3490b3294ee4c55a0f228e3cd004e053d36567f152fbdb3f1f24740311fd1d3",
+                "attributes": {
+                    "url": "",
+                    "urls": [
+                        "https://cdn.azul.com/zulu/bin/zulu8.38.0.13-ca-jdk8.0.212-win_x64.zip"
+                    ],
+                    "sha256": "f5367fc29485252e91d3d1d28b069277b7133dfa2e104fc181af4373267d3a82",
+                    "netrc": "",
+                    "canonical_id": "",
+                    "strip_prefix": "zulu8.38.0.13-ca-jdk8.0.212-win_x64",
+                    "type": "",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0"
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "build_file": "@local_jdk//:BUILD.bazel",
+                    "build_file_content": "",
+                    "workspace_file_content": "",
+                    "name": "jdk8_windows"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+        "definition_information": "Call stack for the definition of repository 'remote_java_tools_javac11_linux' which is a http_archive (rule definition at /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/http.bzl:292:16):\n - /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/utils.bzl:205:9\n - /tmp/bazel/output/external/rules_java/java/repositories.bzl:80:5\n - /tmp/bazel/output/external/rules_java/java/repositories.bzl:315:5\n - /root/home/steve/bootcamp/bazelcon-2019/2-java-tooling/WORKSPACE:23:1",
+        "original_attributes": {
+            "name": "remote_java_tools_javac11_linux",
+            "urls": [
+                "https://mirror.bazel.build/bazel_java_tools/releases/javac11/v4.0/java_tools_javac11_linux-v4.0.zip"
+            ],
+            "sha256": "96e223094a12c842a66db0bb7bb6866e88e26e678f045842911f9bd6b47161f5"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+                "output_tree_hash": "c77bbdec0a06845e9f027fb56ebd9950b78872b087618f9cbf3fe2ebf1d2dddc",
+                "attributes": {
+                    "url": "",
+                    "urls": [
+                        "https://mirror.bazel.build/bazel_java_tools/releases/javac11/v4.0/java_tools_javac11_linux-v4.0.zip"
+                    ],
+                    "sha256": "96e223094a12c842a66db0bb7bb6866e88e26e678f045842911f9bd6b47161f5",
+                    "netrc": "",
+                    "canonical_id": "",
+                    "strip_prefix": "",
+                    "type": "",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0"
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "build_file_content": "",
+                    "workspace_file_content": "",
+                    "name": "remote_java_tools_javac11_linux"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+        "definition_information": "Call stack for the definition of repository 'remote_java_tools_javac11_macos' which is a http_archive (rule definition at /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/http.bzl:292:16):\n - /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/utils.bzl:205:9\n - /tmp/bazel/output/external/rules_java/java/repositories.bzl:96:5\n - /tmp/bazel/output/external/rules_java/java/repositories.bzl:315:5\n - /root/home/steve/bootcamp/bazelcon-2019/2-java-tooling/WORKSPACE:23:1",
+        "original_attributes": {
+            "name": "remote_java_tools_javac11_macos",
+            "urls": [
+                "https://mirror.bazel.build/bazel_java_tools/releases/javac11/v4.0/java_tools_javac11_darwin-v4.0.zip"
+            ],
+            "sha256": "fbf5bf22e9aab9c622e4c8c59314a1eef5ea09eafc5672b4f3250dc0b971bbcc"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+                "output_tree_hash": "9ca03093d555673566e6a919c7fbcf6385e69f58cddb46382a7b1f76a808d0e0",
+                "attributes": {
+                    "url": "",
+                    "urls": [
+                        "https://mirror.bazel.build/bazel_java_tools/releases/javac11/v4.0/java_tools_javac11_darwin-v4.0.zip"
+                    ],
+                    "sha256": "fbf5bf22e9aab9c622e4c8c59314a1eef5ea09eafc5672b4f3250dc0b971bbcc",
+                    "netrc": "",
+                    "canonical_id": "",
+                    "strip_prefix": "",
+                    "type": "",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0"
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "build_file_content": "",
+                    "workspace_file_content": "",
+                    "name": "remote_java_tools_javac11_macos"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+        "definition_information": "Call stack for the definition of repository 'remote_java_tools_javac11_windows' which is a http_archive (rule definition at /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/http.bzl:292:16):\n - /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/utils.bzl:205:9\n - /tmp/bazel/output/external/rules_java/java/repositories.bzl:88:5\n - /tmp/bazel/output/external/rules_java/java/repositories.bzl:315:5\n - /root/home/steve/bootcamp/bazelcon-2019/2-java-tooling/WORKSPACE:23:1",
+        "original_attributes": {
+            "name": "remote_java_tools_javac11_windows",
+            "urls": [
+                "https://mirror.bazel.build/bazel_java_tools/releases/javac11/v4.0/java_tools_javac11_windows-v4.0.zip"
+            ],
+            "sha256": "a1de51447b2ba2eab923d589ba6c72c289c16e6091e6a3bb3e67a05ef4ad200c"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+                "output_tree_hash": "bd16950a874fad1e88579a0c1caf9dac702d9d038c393db84aa9471fc94882cd",
+                "attributes": {
+                    "url": "",
+                    "urls": [
+                        "https://mirror.bazel.build/bazel_java_tools/releases/javac11/v4.0/java_tools_javac11_windows-v4.0.zip"
+                    ],
+                    "sha256": "a1de51447b2ba2eab923d589ba6c72c289c16e6091e6a3bb3e67a05ef4ad200c",
+                    "netrc": "",
+                    "canonical_id": "",
+                    "strip_prefix": "",
+                    "type": "",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0"
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "build_file_content": "",
+                    "workspace_file_content": "",
+                    "name": "remote_java_tools_javac11_windows"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+        "definition_information": "Call stack for the definition of repository 'remote_jdk11_linux' which is a http_archive (rule definition at /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/http.bzl:292:16):\n - /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/utils.bzl:205:9\n - /tmp/bazel/output/external/rules_java/java/repositories.bzl:237:5\n - /tmp/bazel/output/external/rules_java/java/repositories.bzl:314:5\n - /root/home/steve/bootcamp/bazelcon-2019/2-java-tooling/WORKSPACE:23:1",
+        "original_attributes": {
+            "name": "remote_jdk11_linux",
+            "urls": [
+                "https://mirror.bazel.build/openjdk/azul-zulu11.2.3-jdk11.0.1/zulu11.2.3-jdk11.0.1-linux_x64.tar.gz"
+            ],
+            "sha256": "232b1c3511f0d26e92582b7c3cc363be7ac633e371854ca2f2e9f2b50eb72a75",
+            "strip_prefix": "zulu11.2.3-jdk11.0.1-linux_x64",
+            "build_file": "@local_jdk//:BUILD.bazel"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+                "output_tree_hash": "ebe70ed1117b641274765c1bf731799a75a910fc60897ef442af531472cf9a36",
+                "attributes": {
+                    "url": "",
+                    "urls": [
+                        "https://mirror.bazel.build/openjdk/azul-zulu11.2.3-jdk11.0.1/zulu11.2.3-jdk11.0.1-linux_x64.tar.gz"
+                    ],
+                    "sha256": "232b1c3511f0d26e92582b7c3cc363be7ac633e371854ca2f2e9f2b50eb72a75",
+                    "netrc": "",
+                    "canonical_id": "",
+                    "strip_prefix": "zulu11.2.3-jdk11.0.1-linux_x64",
+                    "type": "",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0"
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "build_file": "@local_jdk//:BUILD.bazel",
+                    "build_file_content": "",
+                    "workspace_file_content": "",
+                    "name": "remote_jdk11_linux"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+        "definition_information": "Call stack for the definition of repository 'remote_jdk11_linux_aarch64' which is a http_archive (rule definition at /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/http.bzl:292:16):\n - /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/utils.bzl:205:9\n - /tmp/bazel/output/external/rules_java/java/repositories.bzl:227:5\n - /tmp/bazel/output/external/rules_java/java/repositories.bzl:314:5\n - /root/home/steve/bootcamp/bazelcon-2019/2-java-tooling/WORKSPACE:23:1",
+        "original_attributes": {
+            "name": "remote_jdk11_linux_aarch64",
+            "urls": [
+                "https://mirror.bazel.build/openjdk/azul-zulu11.31.15-ca-jdk11.0.3/zulu11.31.15-ca-jdk11.0.3-linux_aarch64.tar.gz"
+            ],
+            "sha256": "3b0d91611b1bdc4d409afcf9eab4f0e7f4ae09f88fc01bd9f2b48954882ae69b",
+            "strip_prefix": "zulu11.31.15-ca-jdk11.0.3-linux_aarch64",
+            "build_file": "@local_jdk//:BUILD.bazel"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+                "output_tree_hash": "806b5aa3f4564f93858939495c4e4953caac00489d0473291370e5300feb3537",
+                "attributes": {
+                    "url": "",
+                    "urls": [
+                        "https://mirror.bazel.build/openjdk/azul-zulu11.31.15-ca-jdk11.0.3/zulu11.31.15-ca-jdk11.0.3-linux_aarch64.tar.gz"
+                    ],
+                    "sha256": "3b0d91611b1bdc4d409afcf9eab4f0e7f4ae09f88fc01bd9f2b48954882ae69b",
+                    "netrc": "",
+                    "canonical_id": "",
+                    "strip_prefix": "zulu11.31.15-ca-jdk11.0.3-linux_aarch64",
+                    "type": "",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0"
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "build_file": "@local_jdk//:BUILD.bazel",
+                    "build_file_content": "",
+                    "workspace_file_content": "",
+                    "name": "remote_jdk11_linux_aarch64"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+        "definition_information": "Call stack for the definition of repository 'remote_jdk11_macos' which is a http_archive (rule definition at /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/http.bzl:292:16):\n - /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/utils.bzl:205:9\n - /tmp/bazel/output/external/rules_java/java/repositories.bzl:248:5\n - /tmp/bazel/output/external/rules_java/java/repositories.bzl:314:5\n - /root/home/steve/bootcamp/bazelcon-2019/2-java-tooling/WORKSPACE:23:1",
+        "original_attributes": {
+            "name": "remote_jdk11_macos",
+            "urls": [
+                "https://mirror.bazel.build/openjdk/azul-zulu11.2.3-jdk11.0.1/zulu11.2.3-jdk11.0.1-macosx_x64.tar.gz"
+            ],
+            "sha256": "1edf366ee821e5db8e348152fcb337b28dfd6bf0f97943c270dcc6747cedb6cb",
+            "strip_prefix": "zulu11.2.3-jdk11.0.1-macosx_x64",
+            "build_file": "@local_jdk//:BUILD.bazel"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+                "output_tree_hash": "9fceaca3e2a7e788ce5941c61a70a474854c8c52728c6366898f2b07b25110d3",
+                "attributes": {
+                    "url": "",
+                    "urls": [
+                        "https://mirror.bazel.build/openjdk/azul-zulu11.2.3-jdk11.0.1/zulu11.2.3-jdk11.0.1-macosx_x64.tar.gz"
+                    ],
+                    "sha256": "1edf366ee821e5db8e348152fcb337b28dfd6bf0f97943c270dcc6747cedb6cb",
+                    "netrc": "",
+                    "canonical_id": "",
+                    "strip_prefix": "zulu11.2.3-jdk11.0.1-macosx_x64",
+                    "type": "",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0"
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "build_file": "@local_jdk//:BUILD.bazel",
+                    "build_file_content": "",
+                    "workspace_file_content": "",
+                    "name": "remote_jdk11_macos"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+        "definition_information": "Call stack for the definition of repository 'remote_jdk11_windows' which is a http_archive (rule definition at /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/http.bzl:292:16):\n - /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/utils.bzl:205:9\n - /tmp/bazel/output/external/rules_java/java/repositories.bzl:259:5\n - /tmp/bazel/output/external/rules_java/java/repositories.bzl:314:5\n - /root/home/steve/bootcamp/bazelcon-2019/2-java-tooling/WORKSPACE:23:1",
+        "original_attributes": {
+            "name": "remote_jdk11_windows",
+            "urls": [
+                "https://mirror.bazel.build/openjdk/azul-zulu11.2.3-jdk11.0.1/zulu11.2.3-jdk11.0.1-win_x64.zip"
+            ],
+            "sha256": "8e1e2b8347de6746f3fd1538840dd643201533ab113abc4ed93678e342d28aa3",
+            "strip_prefix": "zulu11.2.3-jdk11.0.1-win_x64",
+            "build_file": "@local_jdk//:BUILD.bazel"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+                "output_tree_hash": "505d53496f500fa1cf72c36e264c0a9a3ae0c4b17a43b345d2dfce78a5def53a",
+                "attributes": {
+                    "url": "",
+                    "urls": [
+                        "https://mirror.bazel.build/openjdk/azul-zulu11.2.3-jdk11.0.1/zulu11.2.3-jdk11.0.1-win_x64.zip"
+                    ],
+                    "sha256": "8e1e2b8347de6746f3fd1538840dd643201533ab113abc4ed93678e342d28aa3",
+                    "netrc": "",
+                    "canonical_id": "",
+                    "strip_prefix": "zulu11.2.3-jdk11.0.1-win_x64",
+                    "type": "",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0"
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "build_file": "@local_jdk//:BUILD.bazel",
+                    "build_file_content": "",
+                    "workspace_file_content": "",
+                    "name": "remote_jdk11_windows"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+        "definition_information": "Call stack for the definition of repository 'remote_coverage_tools' which is a http_archive (rule definition at /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/http.bzl:292:16):\n - /DEFAULT.WORKSPACE.SUFFIX:9:1",
+        "original_attributes": {
+            "name": "remote_coverage_tools",
+            "urls": [
+                "https://mirror.bazel.build/bazel_coverage_output_generator/releases/coverage_output_generator-v2.0.zip"
+            ],
+            "sha256": "3a6951051272d51613ac4c77af6ce238a3db321bf06506fde1b8866eb18a89dd"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+                "output_tree_hash": "fa40af2b315e2284aa340216078571544d231ec39c554eb2ba29e5036a8b82a4",
+                "attributes": {
+                    "url": "",
+                    "urls": [
+                        "https://mirror.bazel.build/bazel_coverage_output_generator/releases/coverage_output_generator-v2.0.zip"
+                    ],
+                    "sha256": "3a6951051272d51613ac4c77af6ce238a3db321bf06506fde1b8866eb18a89dd",
+                    "netrc": "",
+                    "canonical_id": "",
+                    "strip_prefix": "",
+                    "type": "",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0"
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "build_file_content": "",
+                    "workspace_file_content": "",
+                    "name": "remote_coverage_tools"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "bind",
+        "original_attributes": {
+            "name": "bootclasspath",
+            "actual": "@local_jdk//:bootclasspath"
+        },
+        "native": "bind(name = \"bootclasspath\", actual = \"@local_jdk//:bootclasspath\")"
+    },
+    {
+        "original_rule_class": "bind",
+        "original_attributes": {
+            "name": "extclasspath",
+            "actual": "@local_jdk//:extdir"
+        },
+        "native": "bind(name = \"extclasspath\", actual = \"@local_jdk//:extdir\")"
+    },
+    {
+        "original_rule_class": "bind",
+        "original_attributes": {
+            "name": "extdir",
+            "actual": "@local_jdk//:extdir"
+        },
+        "native": "bind(name = \"extdir\", actual = \"@local_jdk//:extdir\")"
+    },
+    {
+        "original_rule_class": "bind",
+        "original_attributes": {
+            "name": "jar",
+            "actual": "@local_jdk//:jar"
+        },
+        "native": "bind(name = \"jar\", actual = \"@local_jdk//:jar\")"
+    },
+    {
+        "original_rule_class": "bind",
+        "original_attributes": {
+            "name": "java",
+            "actual": "@local_jdk//:java"
+        },
+        "native": "bind(name = \"java\", actual = \"@local_jdk//:java\")"
+    },
+    {
+        "original_rule_class": "bind",
+        "original_attributes": {
+            "name": "javac",
+            "actual": "@local_jdk//:javac"
+        },
+        "native": "bind(name = \"javac\", actual = \"@local_jdk//:javac\")"
+    },
+    {
+        "original_rule_class": "bind",
+        "original_attributes": {
+            "name": "jdk",
+            "actual": "@local_jdk//:jdk"
+        },
+        "native": "bind(name = \"jdk\", actual = \"@local_jdk//:jdk\")"
+    },
+    {
+        "original_rule_class": "bind",
+        "original_attributes": {
+            "name": "jdk-default",
+            "actual": "@local_jdk//:jdk"
+        },
+        "native": "bind(name = \"jdk-default\", actual = \"@local_jdk//:jdk\")"
+    },
+    {
+        "original_rule_class": "bind",
+        "original_attributes": {
+            "name": "jni_header",
+            "actual": "@local_jdk//:jni_header"
+        },
+        "native": "bind(name = \"jni_header\", actual = \"@local_jdk//:jni_header\")"
+    },
+    {
+        "original_rule_class": "bind",
+        "original_attributes": {
+            "name": "jni_md_header-darwin",
+            "actual": "@local_jdk//:jni_md_header-darwin"
+        },
+        "native": "bind(name = \"jni_md_header-darwin\", actual = \"@local_jdk//:jni_md_header-darwin\")"
+    },
+    {
+        "original_rule_class": "bind",
+        "original_attributes": {
+            "name": "jni_md_header-freebsd",
+            "actual": "@local_jdk//:jni_md_header-freebsd"
+        },
+        "native": "bind(name = \"jni_md_header-freebsd\", actual = \"@local_jdk//:jni_md_header-freebsd\")"
+    },
+    {
+        "original_rule_class": "bind",
+        "original_attributes": {
+            "name": "jni_md_header-linux",
+            "actual": "@local_jdk//:jni_md_header-linux"
+        },
+        "native": "bind(name = \"jni_md_header-linux\", actual = \"@local_jdk//:jni_md_header-linux\")"
+    },
+    {
+        "original_rule_class": "bind",
+        "original_attributes": {
+            "name": "jre",
+            "actual": "@local_jdk//:jre"
+        },
+        "native": "bind(name = \"jre\", actual = \"@local_jdk//:jre\")"
+    },
+    {
+        "original_rule_class": "bind",
+        "original_attributes": {
+            "name": "jre-default",
+            "actual": "@local_jdk//:jre"
+        },
+        "native": "bind(name = \"jre-default\", actual = \"@local_jdk//:jre\")"
+    },
+    {
+        "original_rule_class": "new_local_repository",
+        "original_attributes": {
+            "name": "local_jdk",
+            "path": "/usr/lib/jvm/java-8-openjdk-amd64",
+            "build_file": "/root/.cache/bazel/_bazel_root/install/84defa6eb1e9416bf92d6f89ab2d4f31/jdk.BUILD"
+        },
+        "native": "new_local_repository(name = \"local_jdk\", path = \"/usr/lib/jvm/java-8-openjdk-amd64\", build_file = __embedded_dir__ + \"/\" + \"jdk.BUILD\")"
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+        "definition_information": "Call stack for the definition of repository 'remote_java_tools_darwin' which is a http_archive (rule definition at /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/http.bzl:292:16):\n - /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/utils.bzl:205:9\n - /DEFAULT.WORKSPACE.SUFFIX:280:1",
+        "original_attributes": {
+            "name": "remote_java_tools_darwin",
+            "urls": [
+                "https://mirror.bazel.build/bazel_java_tools/releases/javac11/v6.1/java_tools_javac11_darwin-v6.1.zip",
+                "https://github.com/bazelbuild/java_tools/releases/download/javac11-v6.1/java_tools_javac11_darwin-v6.1.zip"
+            ],
+            "sha256": "f0c488dac18f18ab1a0d18bbd65288c7a128e90a24d9c16f65bd8243f79483a0"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+                "output_tree_hash": "079ec205a1cd9c5575f885c550b5dfdaed99cf6527b29def50eed80656950223",
+                "attributes": {
+                    "url": "",
+                    "urls": [
+                        "https://mirror.bazel.build/bazel_java_tools/releases/javac11/v6.1/java_tools_javac11_darwin-v6.1.zip",
+                        "https://github.com/bazelbuild/java_tools/releases/download/javac11-v6.1/java_tools_javac11_darwin-v6.1.zip"
+                    ],
+                    "sha256": "f0c488dac18f18ab1a0d18bbd65288c7a128e90a24d9c16f65bd8243f79483a0",
+                    "netrc": "",
+                    "canonical_id": "",
+                    "strip_prefix": "",
+                    "type": "",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0"
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "build_file_content": "",
+                    "workspace_file_content": "",
+                    "name": "remote_java_tools_darwin"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+        "definition_information": "Call stack for the definition of repository 'remote_java_tools_linux' which is a http_archive (rule definition at /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/http.bzl:292:16):\n - /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/utils.bzl:205:9\n - /DEFAULT.WORKSPACE.SUFFIX:260:1",
+        "original_attributes": {
+            "name": "remote_java_tools_linux",
+            "urls": [
+                "https://mirror.bazel.build/bazel_java_tools/releases/javac11/v6.1/java_tools_javac11_linux-v6.1.zip",
+                "https://github.com/bazelbuild/java_tools/releases/download/javac11-v6.1/java_tools_javac11_linux-v6.1.zip"
+            ],
+            "sha256": "12f7940ed0bc4c2e82238951cdf19b4179c7dcc361d16fe40fe4266538fb4ac6"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+                "output_tree_hash": "73d8e7b1ff4623400c633a2e2c2a00756d62324e36c9f6edc580f50b42bbb06e",
+                "attributes": {
+                    "url": "",
+                    "urls": [
+                        "https://mirror.bazel.build/bazel_java_tools/releases/javac11/v6.1/java_tools_javac11_linux-v6.1.zip",
+                        "https://github.com/bazelbuild/java_tools/releases/download/javac11-v6.1/java_tools_javac11_linux-v6.1.zip"
+                    ],
+                    "sha256": "12f7940ed0bc4c2e82238951cdf19b4179c7dcc361d16fe40fe4266538fb4ac6",
+                    "netrc": "",
+                    "canonical_id": "",
+                    "strip_prefix": "",
+                    "type": "",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0"
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "build_file_content": "",
+                    "workspace_file_content": "",
+                    "name": "remote_java_tools_linux"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+        "definition_information": "Call stack for the definition of repository 'remote_java_tools_windows' which is a http_archive (rule definition at /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/http.bzl:292:16):\n - /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/utils.bzl:205:9\n - /DEFAULT.WORKSPACE.SUFFIX:270:1",
+        "original_attributes": {
+            "name": "remote_java_tools_windows",
+            "urls": [
+                "https://mirror.bazel.build/bazel_java_tools/releases/javac11/v6.1/java_tools_javac11_windows-v6.1.zip",
+                "https://github.com/bazelbuild/java_tools/releases/download/javac11-v6.1/java_tools_javac11_windows-v6.1.zip"
+            ],
+            "sha256": "e2deb2efff684de78787e0bdc7620f9672d13f04a12856d8e7f677369a8e286b"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+                "output_tree_hash": "1c7e6989d3103c2764430ed5c035fc3aa61cae328ec933d1b566402db682f042",
+                "attributes": {
+                    "url": "",
+                    "urls": [
+                        "https://mirror.bazel.build/bazel_java_tools/releases/javac11/v6.1/java_tools_javac11_windows-v6.1.zip",
+                        "https://github.com/bazelbuild/java_tools/releases/download/javac11-v6.1/java_tools_javac11_windows-v6.1.zip"
+                    ],
+                    "sha256": "e2deb2efff684de78787e0bdc7620f9672d13f04a12856d8e7f677369a8e286b",
+                    "netrc": "",
+                    "canonical_id": "",
+                    "strip_prefix": "",
+                    "type": "",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0"
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "build_file_content": "",
+                    "workspace_file_content": "",
+                    "name": "remote_java_tools_windows"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+        "definition_information": "Call stack for the definition of repository 'remotejdk10_linux' which is a http_archive (rule definition at /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/http.bzl:292:16):\n - /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/utils.bzl:205:9\n - /DEFAULT.WORKSPACE.SUFFIX:168:1",
+        "original_attributes": {
+            "name": "remotejdk10_linux",
+            "urls": [
+                "https://mirror.bazel.build/openjdk/azul-zulu10.2+3-jdk10.0.1/zulu10.2+3-jdk10.0.1-linux_x64-allmodules.tar.gz"
+            ],
+            "sha256": "57fad3602e74c79587901d6966d3b54ef32cb811829a2552163185d5064fe9b5",
+            "strip_prefix": "zulu10.2+3-jdk10.0.1-linux_x64-allmodules",
+            "build_file": "@local_jdk//:BUILD.bazel"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+                "output_tree_hash": "c9dccd7b74cd955b0f787021250b85e4cb18b9a200271f786c18e8903520306e",
+                "attributes": {
+                    "url": "",
+                    "urls": [
+                        "https://mirror.bazel.build/openjdk/azul-zulu10.2+3-jdk10.0.1/zulu10.2+3-jdk10.0.1-linux_x64-allmodules.tar.gz"
+                    ],
+                    "sha256": "57fad3602e74c79587901d6966d3b54ef32cb811829a2552163185d5064fe9b5",
+                    "netrc": "",
+                    "canonical_id": "",
+                    "strip_prefix": "zulu10.2+3-jdk10.0.1-linux_x64-allmodules",
+                    "type": "",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0"
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "build_file": "@local_jdk//:BUILD.bazel",
+                    "build_file_content": "",
+                    "workspace_file_content": "",
+                    "name": "remotejdk10_linux"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+        "definition_information": "Call stack for the definition of repository 'remotejdk10_linux_aarch64' which is a http_archive (rule definition at /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/http.bzl:292:16):\n - /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/utils.bzl:205:9\n - /DEFAULT.WORKSPACE.SUFFIX:203:1",
+        "original_attributes": {
+            "name": "remotejdk10_linux_aarch64",
+            "urls": [
+                "https://mirror.bazel.build/openjdk.linaro.org/releases/jdk10-server-release-1804.tar.xz",
+                "http://openjdk.linaro.org/releases/jdk10-server-release-1804.tar.xz"
+            ],
+            "sha256": "b7098b7aaf6ee1ffd4a2d0371a0be26c5a5c87f6aebbe46fe9a92c90583a84be",
+            "strip_prefix": "jdk10-server-release-1804",
+            "build_file": "@local_jdk//:BUILD.bazel"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+                "output_tree_hash": "20244422e9184a55118a40d3ef41cbcdddfc8baa1ac8543787f6dae017648d61",
+                "attributes": {
+                    "url": "",
+                    "urls": [
+                        "https://mirror.bazel.build/openjdk.linaro.org/releases/jdk10-server-release-1804.tar.xz",
+                        "http://openjdk.linaro.org/releases/jdk10-server-release-1804.tar.xz"
+                    ],
+                    "sha256": "b7098b7aaf6ee1ffd4a2d0371a0be26c5a5c87f6aebbe46fe9a92c90583a84be",
+                    "netrc": "",
+                    "canonical_id": "",
+                    "strip_prefix": "jdk10-server-release-1804",
+                    "type": "",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0"
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "build_file": "@local_jdk//:BUILD.bazel",
+                    "build_file_content": "",
+                    "workspace_file_content": "",
+                    "name": "remotejdk10_linux_aarch64"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+        "definition_information": "Call stack for the definition of repository 'remotejdk10_macos' which is a http_archive (rule definition at /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/http.bzl:292:16):\n - /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/utils.bzl:205:9\n - /DEFAULT.WORKSPACE.SUFFIX:179:1",
+        "original_attributes": {
+            "name": "remotejdk10_macos",
+            "urls": [
+                "https://mirror.bazel.build/openjdk/azul-zulu10.2+3-jdk10.0.1/zulu10.2+3-jdk10.0.1-macosx_x64-allmodules.tar.gz"
+            ],
+            "sha256": "e669c9a897413d855b550b4e39d79614392e6fb96f494e8ef99a34297d9d85d3",
+            "strip_prefix": "zulu10.2+3-jdk10.0.1-macosx_x64-allmodules",
+            "build_file": "@local_jdk//:BUILD.bazel"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+                "output_tree_hash": "5297a8a8aca0477a270d112166aa48cbc7cf7f838a4f9e7def0c983dfa8c61fd",
+                "attributes": {
+                    "url": "",
+                    "urls": [
+                        "https://mirror.bazel.build/openjdk/azul-zulu10.2+3-jdk10.0.1/zulu10.2+3-jdk10.0.1-macosx_x64-allmodules.tar.gz"
+                    ],
+                    "sha256": "e669c9a897413d855b550b4e39d79614392e6fb96f494e8ef99a34297d9d85d3",
+                    "netrc": "",
+                    "canonical_id": "",
+                    "strip_prefix": "zulu10.2+3-jdk10.0.1-macosx_x64-allmodules",
+                    "type": "",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0"
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "build_file": "@local_jdk//:BUILD.bazel",
+                    "build_file_content": "",
+                    "workspace_file_content": "",
+                    "name": "remotejdk10_macos"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+        "definition_information": "Call stack for the definition of repository 'remotejdk10_win' which is a http_archive (rule definition at /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/http.bzl:292:16):\n - /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/utils.bzl:205:9\n - /DEFAULT.WORKSPACE.SUFFIX:190:1",
+        "original_attributes": {
+            "name": "remotejdk10_win",
+            "urls": [
+                "https://mirror.bazel.build/openjdk/azul-zulu10.2+3-jdk10.0.1/zulu10.2+3-jdk10.0.1-win_x64-allmodules.zip"
+            ],
+            "sha256": "c39e7700a8d41794d60985df5a20352435196e78ecbc6a2b30df7be8637bffd5",
+            "strip_prefix": "zulu10.2+3-jdk10.0.1-win_x64-allmodules",
+            "build_file": "@local_jdk//:BUILD.bazel"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+                "output_tree_hash": "611ec9e3ca23a3de4aa368a95daf662cf2fd64e5f52fe3987581961bfe3ca9ff",
+                "attributes": {
+                    "url": "",
+                    "urls": [
+                        "https://mirror.bazel.build/openjdk/azul-zulu10.2+3-jdk10.0.1/zulu10.2+3-jdk10.0.1-win_x64-allmodules.zip"
+                    ],
+                    "sha256": "c39e7700a8d41794d60985df5a20352435196e78ecbc6a2b30df7be8637bffd5",
+                    "netrc": "",
+                    "canonical_id": "",
+                    "strip_prefix": "zulu10.2+3-jdk10.0.1-win_x64-allmodules",
+                    "type": "",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0"
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "build_file": "@local_jdk//:BUILD.bazel",
+                    "build_file_content": "",
+                    "workspace_file_content": "",
+                    "name": "remotejdk10_win"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+        "definition_information": "Call stack for the definition of repository 'remotejdk11_linux' which is a http_archive (rule definition at /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/http.bzl:292:16):\n - /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/utils.bzl:205:9\n - /DEFAULT.WORKSPACE.SUFFIX:216:1",
+        "original_attributes": {
+            "name": "remotejdk11_linux",
+            "urls": [
+                "https://mirror.bazel.build/openjdk/azul-zulu11.2.3-jdk11.0.1/zulu11.2.3-jdk11.0.1-linux_x64.tar.gz"
+            ],
+            "sha256": "232b1c3511f0d26e92582b7c3cc363be7ac633e371854ca2f2e9f2b50eb72a75",
+            "strip_prefix": "zulu11.2.3-jdk11.0.1-linux_x64",
+            "build_file": "@local_jdk//:BUILD.bazel"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+                "output_tree_hash": "41eeb95428accd781c6818d658697a95762c0d7d894e78d13dfb8bc72726e377",
+                "attributes": {
+                    "url": "",
+                    "urls": [
+                        "https://mirror.bazel.build/openjdk/azul-zulu11.2.3-jdk11.0.1/zulu11.2.3-jdk11.0.1-linux_x64.tar.gz"
+                    ],
+                    "sha256": "232b1c3511f0d26e92582b7c3cc363be7ac633e371854ca2f2e9f2b50eb72a75",
+                    "netrc": "",
+                    "canonical_id": "",
+                    "strip_prefix": "zulu11.2.3-jdk11.0.1-linux_x64",
+                    "type": "",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0"
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "build_file": "@local_jdk//:BUILD.bazel",
+                    "build_file_content": "",
+                    "workspace_file_content": "",
+                    "name": "remotejdk11_linux"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+        "definition_information": "Call stack for the definition of repository 'remotejdk11_linux_aarch64' which is a http_archive (rule definition at /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/http.bzl:292:16):\n - /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/utils.bzl:205:9\n - /DEFAULT.WORKSPACE.SUFFIX:227:1",
+        "original_attributes": {
+            "name": "remotejdk11_linux_aarch64",
+            "urls": [
+                "https://mirror.bazel.build/openjdk/azul-zulu11.31.15-ca-jdk11.0.3/zulu11.31.15-ca-jdk11.0.3-linux_aarch64.tar.gz"
+            ],
+            "sha256": "3b0d91611b1bdc4d409afcf9eab4f0e7f4ae09f88fc01bd9f2b48954882ae69b",
+            "strip_prefix": "zulu11.31.15-ca-jdk11.0.3-linux_aarch64",
+            "build_file": "@local_jdk//:BUILD.bazel"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+                "output_tree_hash": "63b2de4509be27b745ea5447a370d53bffe7fed890e361a719452ac0a6dc004b",
+                "attributes": {
+                    "url": "",
+                    "urls": [
+                        "https://mirror.bazel.build/openjdk/azul-zulu11.31.15-ca-jdk11.0.3/zulu11.31.15-ca-jdk11.0.3-linux_aarch64.tar.gz"
+                    ],
+                    "sha256": "3b0d91611b1bdc4d409afcf9eab4f0e7f4ae09f88fc01bd9f2b48954882ae69b",
+                    "netrc": "",
+                    "canonical_id": "",
+                    "strip_prefix": "zulu11.31.15-ca-jdk11.0.3-linux_aarch64",
+                    "type": "",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0"
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "build_file": "@local_jdk//:BUILD.bazel",
+                    "build_file_content": "",
+                    "workspace_file_content": "",
+                    "name": "remotejdk11_linux_aarch64"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+        "definition_information": "Call stack for the definition of repository 'remotejdk11_macos' which is a http_archive (rule definition at /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/http.bzl:292:16):\n - /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/utils.bzl:205:9\n - /DEFAULT.WORKSPACE.SUFFIX:238:1",
+        "original_attributes": {
+            "name": "remotejdk11_macos",
+            "urls": [
+                "https://mirror.bazel.build/openjdk/azul-zulu11.2.3-jdk11.0.1/zulu11.2.3-jdk11.0.1-macosx_x64.tar.gz"
+            ],
+            "sha256": "1edf366ee821e5db8e348152fcb337b28dfd6bf0f97943c270dcc6747cedb6cb",
+            "strip_prefix": "zulu11.2.3-jdk11.0.1-macosx_x64",
+            "build_file": "@local_jdk//:BUILD.bazel"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+                "output_tree_hash": "90c3a1eeb9570061df7a4990590f682dc8f923c43afc00d33d7dc0f3727f177d",
+                "attributes": {
+                    "url": "",
+                    "urls": [
+                        "https://mirror.bazel.build/openjdk/azul-zulu11.2.3-jdk11.0.1/zulu11.2.3-jdk11.0.1-macosx_x64.tar.gz"
+                    ],
+                    "sha256": "1edf366ee821e5db8e348152fcb337b28dfd6bf0f97943c270dcc6747cedb6cb",
+                    "netrc": "",
+                    "canonical_id": "",
+                    "strip_prefix": "zulu11.2.3-jdk11.0.1-macosx_x64",
+                    "type": "",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0"
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "build_file": "@local_jdk//:BUILD.bazel",
+                    "build_file_content": "",
+                    "workspace_file_content": "",
+                    "name": "remotejdk11_macos"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+        "definition_information": "Call stack for the definition of repository 'remotejdk11_win' which is a http_archive (rule definition at /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/http.bzl:292:16):\n - /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/utils.bzl:205:9\n - /DEFAULT.WORKSPACE.SUFFIX:249:1",
+        "original_attributes": {
+            "name": "remotejdk11_win",
+            "urls": [
+                "https://mirror.bazel.build/openjdk/azul-zulu11.2.3-jdk11.0.1/zulu11.2.3-jdk11.0.1-win_x64.zip"
+            ],
+            "sha256": "8e1e2b8347de6746f3fd1538840dd643201533ab113abc4ed93678e342d28aa3",
+            "strip_prefix": "zulu11.2.3-jdk11.0.1-win_x64",
+            "build_file": "@local_jdk//:BUILD.bazel"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+                "output_tree_hash": "edacb54f8413aabfccd4a01e6cef3e1ef83bbd15e5079802326fbe7def235021",
+                "attributes": {
+                    "url": "",
+                    "urls": [
+                        "https://mirror.bazel.build/openjdk/azul-zulu11.2.3-jdk11.0.1/zulu11.2.3-jdk11.0.1-win_x64.zip"
+                    ],
+                    "sha256": "8e1e2b8347de6746f3fd1538840dd643201533ab113abc4ed93678e342d28aa3",
+                    "netrc": "",
+                    "canonical_id": "",
+                    "strip_prefix": "zulu11.2.3-jdk11.0.1-win_x64",
+                    "type": "",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0"
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "build_file": "@local_jdk//:BUILD.bazel",
+                    "build_file_content": "",
+                    "workspace_file_content": "",
+                    "name": "remotejdk11_win"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+        "definition_information": "Call stack for the definition of repository 'remotejdk_linux' which is a http_archive (rule definition at /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/http.bzl:292:16):\n - /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/utils.bzl:205:9\n - /DEFAULT.WORKSPACE.SUFFIX:120:1",
+        "original_attributes": {
+            "name": "remotejdk_linux",
+            "urls": [
+                "https://mirror.bazel.build/openjdk/azul-zulu-9.0.7.1-jdk9.0.7/zulu9.0.7.1-jdk9.0.7-linux_x64-allmodules.tar.gz"
+            ],
+            "sha256": "f27cb933de4f9e7fe9a703486cf44c84bc8e9f138be0c270c9e5716a32367e87",
+            "strip_prefix": "zulu9.0.7.1-jdk9.0.7-linux_x64-allmodules",
+            "build_file": "@local_jdk//:BUILD.bazel"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+                "output_tree_hash": "60af9beadca2b7093e567a2c566b9cb1a3e3630ceac94b5d2f6190837dcdbd95",
+                "attributes": {
+                    "url": "",
+                    "urls": [
+                        "https://mirror.bazel.build/openjdk/azul-zulu-9.0.7.1-jdk9.0.7/zulu9.0.7.1-jdk9.0.7-linux_x64-allmodules.tar.gz"
+                    ],
+                    "sha256": "f27cb933de4f9e7fe9a703486cf44c84bc8e9f138be0c270c9e5716a32367e87",
+                    "netrc": "",
+                    "canonical_id": "",
+                    "strip_prefix": "zulu9.0.7.1-jdk9.0.7-linux_x64-allmodules",
+                    "type": "",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0"
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "build_file": "@local_jdk//:BUILD.bazel",
+                    "build_file_content": "",
+                    "workspace_file_content": "",
+                    "name": "remotejdk_linux"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+        "definition_information": "Call stack for the definition of repository 'remotejdk_linux_aarch64' which is a http_archive (rule definition at /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/http.bzl:292:16):\n - /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/utils.bzl:205:9\n - /DEFAULT.WORKSPACE.SUFFIX:155:1",
+        "original_attributes": {
+            "name": "remotejdk_linux_aarch64",
+            "urls": [
+                "https://mirror.bazel.build/openjdk.linaro.org/releases/jdk9-server-release-1708.tar.xz",
+                "http://openjdk.linaro.org/releases/jdk9-server-release-1708.tar.xz"
+            ],
+            "sha256": "72e7843902b0395e2d30e1e9ad2a5f05f36a4bc62529828bcbc698d54aec6022",
+            "strip_prefix": "jdk9-server-release-1708",
+            "build_file": "@local_jdk//:BUILD.bazel"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+                "output_tree_hash": "c04e055b0c961642ff9da7be19863bd62413544ea0a31359dfcdf725b298d93f",
+                "attributes": {
+                    "url": "",
+                    "urls": [
+                        "https://mirror.bazel.build/openjdk.linaro.org/releases/jdk9-server-release-1708.tar.xz",
+                        "http://openjdk.linaro.org/releases/jdk9-server-release-1708.tar.xz"
+                    ],
+                    "sha256": "72e7843902b0395e2d30e1e9ad2a5f05f36a4bc62529828bcbc698d54aec6022",
+                    "netrc": "",
+                    "canonical_id": "",
+                    "strip_prefix": "jdk9-server-release-1708",
+                    "type": "",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0"
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "build_file": "@local_jdk//:BUILD.bazel",
+                    "build_file_content": "",
+                    "workspace_file_content": "",
+                    "name": "remotejdk_linux_aarch64"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+        "definition_information": "Call stack for the definition of repository 'remotejdk_macos' which is a http_archive (rule definition at /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/http.bzl:292:16):\n - /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/utils.bzl:205:9\n - /DEFAULT.WORKSPACE.SUFFIX:131:1",
+        "original_attributes": {
+            "name": "remotejdk_macos",
+            "urls": [
+                "https://mirror.bazel.build/openjdk/azul-zulu-9.0.7.1-jdk9.0.7/zulu9.0.7.1-jdk9.0.7-macosx_x64-allmodules.tar.gz"
+            ],
+            "sha256": "404e7058ff91f956612f47705efbee8e175a38b505fb1b52d8c1ea98718683de",
+            "strip_prefix": "zulu9.0.7.1-jdk9.0.7-macosx_x64-allmodules",
+            "build_file": "@local_jdk//:BUILD.bazel"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+                "output_tree_hash": "2dcd799e86386cd1f9a24900c6dcb9b598a84be28dab6eb93792079ce07aab2f",
+                "attributes": {
+                    "url": "",
+                    "urls": [
+                        "https://mirror.bazel.build/openjdk/azul-zulu-9.0.7.1-jdk9.0.7/zulu9.0.7.1-jdk9.0.7-macosx_x64-allmodules.tar.gz"
+                    ],
+                    "sha256": "404e7058ff91f956612f47705efbee8e175a38b505fb1b52d8c1ea98718683de",
+                    "netrc": "",
+                    "canonical_id": "",
+                    "strip_prefix": "zulu9.0.7.1-jdk9.0.7-macosx_x64-allmodules",
+                    "type": "",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0"
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "build_file": "@local_jdk//:BUILD.bazel",
+                    "build_file_content": "",
+                    "workspace_file_content": "",
+                    "name": "remotejdk_macos"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+        "definition_information": "Call stack for the definition of repository 'remotejdk_win' which is a http_archive (rule definition at /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/http.bzl:292:16):\n - /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/utils.bzl:205:9\n - /DEFAULT.WORKSPACE.SUFFIX:142:1",
+        "original_attributes": {
+            "name": "remotejdk_win",
+            "urls": [
+                "https://mirror.bazel.build/openjdk/azul-zulu-9.0.7.1-jdk9.0.7/zulu9.0.7.1-jdk9.0.7-win_x64-allmodules.zip"
+            ],
+            "sha256": "e738829017f107e7a7cd5069db979398ec3c3f03ef56122f89ba38e7374f63ed",
+            "strip_prefix": "zulu9.0.7.1-jdk9.0.7-win_x64-allmodules",
+            "build_file": "@local_jdk//:BUILD.bazel"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+                "output_tree_hash": "faf2966f62c47f39be6eedf5f486bd363afb14c33da79c7a62a2087aac1385e5",
+                "attributes": {
+                    "url": "",
+                    "urls": [
+                        "https://mirror.bazel.build/openjdk/azul-zulu-9.0.7.1-jdk9.0.7/zulu9.0.7.1-jdk9.0.7-win_x64-allmodules.zip"
+                    ],
+                    "sha256": "e738829017f107e7a7cd5069db979398ec3c3f03ef56122f89ba38e7374f63ed",
+                    "netrc": "",
+                    "canonical_id": "",
+                    "strip_prefix": "zulu9.0.7.1-jdk9.0.7-win_x64-allmodules",
+                    "type": "",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0"
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "build_file": "@local_jdk//:BUILD.bazel",
+                    "build_file_content": "",
+                    "workspace_file_content": "",
+                    "name": "remotejdk_win"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+        "definition_information": "Call stack for the definition of repository 'rules_cc' which is a http_archive (rule definition at /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/http.bzl:292:16):\n - /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/utils.bzl:205:9\n - /DEFAULT.WORKSPACE.SUFFIX:302:1",
+        "original_attributes": {
+            "name": "rules_cc",
+            "urls": [
+                "https://mirror.bazel.build/github.com/bazelbuild/rules_cc/archive/0d5f3f2768c6ca2faca0079a997a97ce22997a0c.zip",
+                "https://github.com/bazelbuild/rules_cc/archive/0d5f3f2768c6ca2faca0079a997a97ce22997a0c.zip"
+            ],
+            "sha256": "36fa66d4d49debd71d05fba55c1353b522e8caef4a20f8080a3d17cdda001d89",
+            "strip_prefix": "rules_cc-0d5f3f2768c6ca2faca0079a997a97ce22997a0c"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+                "output_tree_hash": "7f487a4ba08b793dbab12253aa825d1877305e0e165c51a2e8213ce80590c6f6",
+                "attributes": {
+                    "url": "",
+                    "urls": [
+                        "https://mirror.bazel.build/github.com/bazelbuild/rules_cc/archive/0d5f3f2768c6ca2faca0079a997a97ce22997a0c.zip",
+                        "https://github.com/bazelbuild/rules_cc/archive/0d5f3f2768c6ca2faca0079a997a97ce22997a0c.zip"
+                    ],
+                    "sha256": "36fa66d4d49debd71d05fba55c1353b522e8caef4a20f8080a3d17cdda001d89",
+                    "netrc": "",
+                    "canonical_id": "",
+                    "strip_prefix": "rules_cc-0d5f3f2768c6ca2faca0079a997a97ce22997a0c",
+                    "type": "",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0"
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "build_file_content": "",
+                    "workspace_file_content": "",
+                    "name": "rules_cc"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+        "definition_information": "Call stack for the definition of repository 'rules_proto' which is a http_archive (rule definition at /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/http.bzl:292:16):\n - /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/utils.bzl:205:9\n - /DEFAULT.WORKSPACE.SUFFIX:314:1",
+        "original_attributes": {
+            "name": "rules_proto",
+            "urls": [
+                "https://mirror.bazel.build/github.com/bazelbuild/rules_proto/archive/97d8af4dc474595af3900dd85cb3a29ad28cc313.tar.gz",
+                "https://github.com/bazelbuild/rules_proto/archive/97d8af4dc474595af3900dd85cb3a29ad28cc313.tar.gz"
+            ],
+            "sha256": "602e7161d9195e50246177e7c55b2f39950a9cf7366f74ed5f22fd45750cd208",
+            "strip_prefix": "rules_proto-97d8af4dc474595af3900dd85cb3a29ad28cc313"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+                "output_tree_hash": "4f74a84e9684fc73c48656a9a6c60bdfaed2cabdf5dc7d21da7ae2ee78c7efa3",
+                "attributes": {
+                    "url": "",
+                    "urls": [
+                        "https://mirror.bazel.build/github.com/bazelbuild/rules_proto/archive/97d8af4dc474595af3900dd85cb3a29ad28cc313.tar.gz",
+                        "https://github.com/bazelbuild/rules_proto/archive/97d8af4dc474595af3900dd85cb3a29ad28cc313.tar.gz"
+                    ],
+                    "sha256": "602e7161d9195e50246177e7c55b2f39950a9cf7366f74ed5f22fd45750cd208",
+                    "netrc": "",
+                    "canonical_id": "",
+                    "strip_prefix": "rules_proto-97d8af4dc474595af3900dd85cb3a29ad28cc313",
+                    "type": "",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0"
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "build_file_content": "",
+                    "workspace_file_content": "",
+                    "name": "rules_proto"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+        "definition_information": "Call stack for the definition of repository 'android_tools' which is a http_archive (rule definition at /tmp/bazel/output/external/bazel_tools/tools/build_defs/repo/http.bzl:292:16):\n - /DEFAULT.WORKSPACE.SUFFIX:343:1",
+        "original_attributes": {
+            "name": "android_tools",
+            "url": "https://mirror.bazel.build/bazel_android_tools/android_tools_pkg-0.12.tar.gz",
+            "sha256": "96c4eef4d195dd95e43a4259cf5b82a1e34f67333439e91955bbdc0e1c8e7a31"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+                "output_tree_hash": "b0122b814877fa9e6141d697678142cc07ecef4c3411e20d098677525e1b2183",
+                "attributes": {
+                    "url": "https://mirror.bazel.build/bazel_android_tools/android_tools_pkg-0.12.tar.gz",
+                    "urls": [],
+                    "sha256": "96c4eef4d195dd95e43a4259cf5b82a1e34f67333439e91955bbdc0e1c8e7a31",
+                    "netrc": "",
+                    "canonical_id": "",
+                    "strip_prefix": "",
+                    "type": "",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0"
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "build_file_content": "",
+                    "workspace_file_content": "",
+                    "name": "android_tools"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "local_config_platform",
+        "original_attributes": {
+            "name": "local_config_platform"
+        },
+        "native": "local_config_platform(name = 'local_config_platform')"
+    },
+    {
+        "original_rule_class": "local_repository",
+        "original_attributes": {
+            "name": "platforms",
+            "path": "/root/.cache/bazel/_bazel_root/install/84defa6eb1e9416bf92d6f89ab2d4f31/platforms"
+        },
+        "native": "local_repository(name = \"platforms\", path = __embedded_dir__ + \"/\" + \"platforms\")"
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/cpp:cc_configure.bzl%cc_autoconf",
+        "definition_information": "Call stack for the definition of repository 'local_config_cc' which is a cc_autoconf (rule definition at /tmp/bazel/output/external/bazel_tools/tools/cpp/cc_configure.bzl:143:15):\n - /tmp/bazel/output/external/bazel_tools/tools/cpp/cc_configure.bzl:179:5\n - /DEFAULT.WORKSPACE.SUFFIX:385:1",
+        "original_attributes": {
+            "name": "local_config_cc"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/cpp:cc_configure.bzl%cc_autoconf",
+                "output_tree_hash": "8664050be20fcaadc4f3220b3cba71d195cad8770bae12aff76e1e98c70b3fa9",
+                "attributes": {
+                    "name": "local_config_cc"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/cpp:cc_configure.bzl%cc_autoconf_toolchains",
+        "definition_information": "Call stack for the definition of repository 'local_config_cc_toolchains' which is a cc_autoconf_toolchains (rule definition at /tmp/bazel/output/external/bazel_tools/tools/cpp/cc_configure.bzl:79:26):\n - /tmp/bazel/output/external/bazel_tools/tools/cpp/cc_configure.bzl:178:5\n - /DEFAULT.WORKSPACE.SUFFIX:385:1",
+        "original_attributes": {
+            "name": "local_config_cc_toolchains"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/cpp:cc_configure.bzl%cc_autoconf_toolchains",
+                "output_tree_hash": "1f5225797781e52701eedc83d3881885dbf142cf22222c8ef3b38c8a4b70070e",
+                "attributes": {
+                    "name": "local_config_cc_toolchains"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/osx:xcode_configure.bzl%xcode_autoconf",
+        "definition_information": "Call stack for the definition of repository 'local_config_xcode' which is a xcode_autoconf (rule definition at /tmp/bazel/output/external/bazel_tools/tools/osx/xcode_configure.bzl:254:18):\n - /tmp/bazel/output/external/bazel_tools/tools/osx/xcode_configure.bzl:264:5\n - /DEFAULT.WORKSPACE.SUFFIX:388:1",
+        "original_attributes": {
+            "name": "local_config_xcode",
+            "xcode_locator": "@bazel_tools//tools/osx:xcode_locator.m"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/osx:xcode_configure.bzl%xcode_autoconf",
+                "output_tree_hash": "ec026961157bb71cf68d1b568815ad68147ed16f318161bc0da40f6f3d7d79fd",
+                "attributes": {
+                    "name": "local_config_xcode",
+                    "xcode_locator": "@bazel_tools//tools/osx:xcode_locator.m"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/sh:sh_configure.bzl%sh_config",
+        "definition_information": "Call stack for the definition of repository 'local_config_sh' which is a sh_config (rule definition at /tmp/bazel/output/external/bazel_tools/tools/sh/sh_configure.bzl:72:13):\n - /tmp/bazel/output/external/bazel_tools/tools/sh/sh_configure.bzl:83:5\n - /DEFAULT.WORKSPACE.SUFFIX:391:1",
+        "original_attributes": {
+            "name": "local_config_sh"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/sh:sh_configure.bzl%sh_config",
+                "output_tree_hash": "e36855460b514225eac75f4abe2cb992c5455b7077a9028d213d269d11490744",
+                "attributes": {
+                    "name": "local_config_sh"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "register_toolchains",
+        "original_attributes": {
+            "name": "//external/register_toolchains",
+            "*args": [
+                "@bazel_tools//tools/jdk:all",
+                "@bazel_tools//tools/python:autodetecting_toolchain",
+                "@local_config_cc_toolchains//:all",
+                "@local_config_sh//:local_sh_toolchain"
+            ]
+        },
+        "native": "register_toolchains(\"@bazel_tools//tools/jdk:all\", \"@bazel_tools//tools/python:autodetecting_toolchain\", \"@local_config_cc_toolchains//:all\", \"@local_config_sh//:local_sh_toolchain\")"
+    },
+    {
+        "original_rule_class": "register_execution_platforms",
+        "original_attributes": {
+            "name": "//external/register_execution_platforms",
+            "*args": []
+        },
+        "native": "register_execution_platforms()"
+    }
+]

@@ -1,0 +1,87 @@
+load(
+    "@rules_haskell//haskell:defs.bzl",
+    "haskell_doc",
+    "haskell_library",
+)
+
+package(
+    default_testonly = 1,
+    default_visibility = ["//visibility:public"],
+)
+
+haskell_library(
+    name = "haddock-lib-deep",
+    srcs = ["Deep.hsc"],
+    deps = ["//tests/hackage:base"],
+)
+
+haskell_library(
+    name = "haddock-lib-a",
+    srcs = [
+        "LibA.hs",
+        "LibA/A.hs",
+        "header.h",
+    ],
+    compiler_flags = ["-I."],
+    deps = [
+        ":haddock-lib-deep",
+        "//tests/hackage:base",
+        "//tests/hackage:template-haskell",
+    ],
+)
+
+haskell_library(
+    name = "haddock-lib-b",
+    srcs = [
+        "LibB.hs",
+        "TH.hs",
+    ],
+    extra_srcs = [
+        "unicode.txt",
+    ],
+    tags = [
+        "requires_zlib",
+    ],
+    deps = [
+        ":haddock-lib-a",
+        "//tests/hackage:base",
+        "//tests/hackage:template-haskell",
+        "@zlib",
+    ],
+)
+
+haskell_doc(
+    name = "haddock",
+    index_transitive_deps = False,
+    deps = [":haddock-lib-b"],
+)
+
+sh_test(
+    name = "data-dependency",
+    srcs = ["data_dependency.sh"],
+    args = ["$(rootpaths :haddock)"],
+    data = [":haddock"],
+    tags = [
+        # Fails in profiling mode due to missing haddocks for Deep.
+        "requires_dynamic",
+    ],
+    deps = ["@bazel_tools//tools/bash/runfiles"],
+)
+
+haskell_doc(
+    name = "haddock-transitive",
+    index_transitive_deps = True,
+    deps = [":haddock-lib-b"],
+)
+
+sh_test(
+    name = "data-dependency-transitive",
+    srcs = ["data_dependency.sh"],
+    args = ["$(rootpaths :haddock-transitive)"],
+    data = [":haddock-transitive"],
+    tags = [
+        # Fails in profiling mode due to missing haddocks for Deep.
+        "requires_dynamic",
+    ],
+    deps = ["@bazel_tools//tools/bash/runfiles"],
+)

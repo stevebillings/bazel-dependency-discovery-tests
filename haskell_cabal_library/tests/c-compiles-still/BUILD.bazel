@@ -1,0 +1,15 @@
+load(
+    "@rules_haskell//haskell:defs.bzl",
+    "haskell_library",
+)
+
+package(default_testonly = 1)
+
+haskell_library(
+    name = "foo",
+    srcs = ["Foo.hs"],
+    deps = [
+        "//tests/data:ourclibrary",
+        "//tests/hackage:base",
+    ],
+)

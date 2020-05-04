@@ -1,0 +1,677 @@
+resolved = [
+    {
+        "original_rule_class": "local_repository",
+        "original_attributes": {
+            "name": "bazel_tools",
+            "path": "/root/.cache/bazel/_bazel_root/install/84defa6eb1e9416bf92d6f89ab2d4f31/embedded_tools"
+        },
+        "native": "local_repository(name = \"bazel_tools\", path = __embedded_dir__ + \"/\" + \"embedded_tools\")"
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+        "definition_information": "Call stack for the definition of repository 'bazel_skylib' which is a http_archive (rule definition at /root/.cache/bazel/_bazel_root/896e039de1e50d7e2de0b14a9acf4028/external/bazel_tools/tools/build_defs/repo/http.bzl:292:16):\n - /root/home/steve/examples/rules_jvm_external/WORKSPACE:23:1",
+        "original_attributes": {
+            "name": "bazel_skylib",
+            "url": "https://github.com/bazelbuild/bazel-skylib/archive/0.8.0.tar.gz",
+            "sha256": "2ea8a5ed2b448baf4a6855d3ce049c4c452a6470b1efd1504fdb7c1c134d220a",
+            "strip_prefix": "bazel-skylib-0.8.0"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+                "output_tree_hash": "b595c6c66f3d3a16393e1cc004fadac5d7f3c279e411c57c1a1d0cf5189cb861",
+                "attributes": {
+                    "url": "https://github.com/bazelbuild/bazel-skylib/archive/0.8.0.tar.gz",
+                    "urls": [],
+                    "sha256": "2ea8a5ed2b448baf4a6855d3ce049c4c452a6470b1efd1504fdb7c1c134d220a",
+                    "netrc": "",
+                    "canonical_id": "",
+                    "strip_prefix": "bazel-skylib-0.8.0",
+                    "type": "",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0"
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "build_file_content": "",
+                    "workspace_file_content": "",
+                    "name": "bazel_skylib"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "local_repository",
+        "original_attributes": {
+            "name": "rules_jvm_external",
+            "path": "."
+        },
+        "native": "local_repository(name = \"rules_jvm_external\", path = \".\")"
+    },
+    {
+        "original_rule_class": "@rules_jvm_external//:coursier.bzl%pinned_coursier_fetch",
+        "definition_information": "Call stack for the definition of repository 'unsafe_shared_cache_with_pinning' which is a pinned_coursier_fetch (rule definition at /root/.cache/bazel/_bazel_root/896e039de1e50d7e2de0b14a9acf4028/external/rules_jvm_external/coursier.bzl:903:25):\n - /root/home/steve/examples/rules_jvm_external/defs.bzl:111:9\n - /root/home/steve/examples/rules_jvm_external/WORKSPACE:77:1",
+        "original_attributes": {
+            "name": "unsafe_shared_cache_with_pinning",
+            "artifacts": [
+                "{ \"group\": \"com.google.guava\", \"artifact\": \"guava\", \"version\": \"27.0-jre\" }"
+            ],
+            "fetch_sources": True,
+            "generate_compat_repositories": False,
+            "maven_install_json": "//:unsafe_shared_cache_with_pinning_install.json",
+            "override_targets": {},
+            "strict_visibility": False
+        },
+        "repositories": [
+            {
+                "rule_class": "@rules_jvm_external//:coursier.bzl%pinned_coursier_fetch",
+                "output_tree_hash": "723603d9d6984df5bc4b080810d93da65baf10bee0dbbacd3d07b7a0a15e121b",
+                "attributes": {
+                    "name": "unsafe_shared_cache_with_pinning",
+                    "artifacts": [
+                        "{ \"group\": \"com.google.guava\", \"artifact\": \"guava\", \"version\": \"27.0-jre\" }"
+                    ],
+                    "fetch_sources": True,
+                    "generate_compat_repositories": False,
+                    "maven_install_json": "//:unsafe_shared_cache_with_pinning_install.json",
+                    "override_targets": {},
+                    "strict_visibility": False
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@rules_jvm_external//:coursier.bzl%pinned_coursier_fetch",
+        "definition_information": "Call stack for the definition of repository 'regression_testing' which is a pinned_coursier_fetch (rule definition at /root/.cache/bazel/_bazel_root/896e039de1e50d7e2de0b14a9acf4028/external/rules_jvm_external/coursier.bzl:903:25):\n - /root/home/steve/examples/rules_jvm_external/defs.bzl:111:9\n - /root/home/steve/examples/rules_jvm_external/WORKSPACE:137:1",
+        "original_attributes": {
+            "name": "regression_testing",
+            "artifacts": [
+                "{ \"group\": \"org.pantsbuild\", \"artifact\": \"jarjar\", \"version\": \"1.6.6\" }",
+                "{ \"group\": \"junit\", \"artifact\": \"junit\", \"version\": \"4.12\" }",
+                "{ \"group\": \"org.jetbrains.kotlin\", \"artifact\": \"kotlin-test\", \"version\": \"1.3.21\" }",
+                "{ \"group\": \"com.digitalasset\", \"artifact\": \"damlc\", \"version\": \"100.12.1\", \"packaging\": \"jar\", \"classifier\": \"osx\" }",
+                "{ \"group\": \"org.eclipse.jetty.orbit\", \"artifact\": \"javax.servlet\", \"version\": \"3.0.0.v201112011016\" }",
+                "{ \"group\": \"com.squareup\", \"artifact\": \"javapoet\", \"version\": \"1.11.1\", \"neverlink\": true }",
+                "{ \"group\": \"com.github.fommil.netlib\", \"artifact\": \"all\", \"version\": \"1.1.2\" }",
+                "{ \"group\": \"nz.ac.waikato.cms.weka\", \"artifact\": \"weka-stable\", \"version\": \"3.8.1\" }",
+                "{ \"group\": \"com.android.support\", \"artifact\": \"appcompat-v7\", \"version\": \"28.0.0\", \"packaging\": \"aar\" }",
+                "{ \"group\": \"com.google.android.gms\", \"artifact\": \"play-services-base\", \"version\": \"16.1.0\" }",
+                "{ \"group\": \"org.apache.flink\", \"artifact\": \"flink-test-utils_2.12\", \"version\": \"1.8.0\" }",
+                "{ \"group\": \"ch.epfl.scala\", \"artifact\": \"compiler-interface\", \"version\": \"1.3.0-M4+20-c8a2f9bd\" }",
+                "{ \"group\": \"org.openjfx\", \"artifact\": \"javafx-base\", \"version\": \"11.0.1\" }",
+                "{ \"group\": \"io.kubernetes\", \"artifact\": \"client-java\", \"version\": \"4.0.0-beta1\" }",
+                "{ \"group\": \"com.google.ar.sceneform.ux\", \"artifact\": \"sceneform-ux\", \"version\": \"1.10.0\" }",
+                "{ \"group\": \"com.github.oshi\", \"artifact\": \"oshi-parent\", \"version\": \"3.4.0\" }",
+                "{ \"group\": \"com.github.spinalhdl\", \"artifact\": \"spinalhdl-core_2.11\", \"version\": \"1.3.6\" }",
+                "{ \"group\": \"com.github.spinalhdl\", \"artifact\": \"spinalhdl-lib_2.11\", \"version\": \"1.3.6\" }",
+                "{ \"group\": \"org.apache.kafka\", \"artifact\": \"kafka_2.11\", \"version\": \"2.1.1\" }",
+                "{ \"group\": \"io.confluent\", \"artifact\": \"kafka-avro-serializer\", \"version\": \"5.0.1\" }"
+            ],
+            "fetch_sources": False,
+            "generate_compat_repositories": True,
+            "maven_install_json": "//:regression_testing_install.json",
+            "override_targets": {
+                "com.google.ar.sceneform:rendering": "@//tests/integration/override_targets:sceneform_rendering"
+            },
+            "strict_visibility": False
+        },
+        "repositories": [
+            {
+                "rule_class": "@rules_jvm_external//:coursier.bzl%pinned_coursier_fetch",
+                "output_tree_hash": "f034f179b63742a10a785428d4fe5ad1411e3b5a505c027408cb105084dd4af1",
+                "attributes": {
+                    "name": "regression_testing",
+                    "artifacts": [
+                        "{ \"group\": \"org.pantsbuild\", \"artifact\": \"jarjar\", \"version\": \"1.6.6\" }",
+                        "{ \"group\": \"junit\", \"artifact\": \"junit\", \"version\": \"4.12\" }",
+                        "{ \"group\": \"org.jetbrains.kotlin\", \"artifact\": \"kotlin-test\", \"version\": \"1.3.21\" }",
+                        "{ \"group\": \"com.digitalasset\", \"artifact\": \"damlc\", \"version\": \"100.12.1\", \"packaging\": \"jar\", \"classifier\": \"osx\" }",
+                        "{ \"group\": \"org.eclipse.jetty.orbit\", \"artifact\": \"javax.servlet\", \"version\": \"3.0.0.v201112011016\" }",
+                        "{ \"group\": \"com.squareup\", \"artifact\": \"javapoet\", \"version\": \"1.11.1\", \"neverlink\": true }",
+                        "{ \"group\": \"com.github.fommil.netlib\", \"artifact\": \"all\", \"version\": \"1.1.2\" }",
+                        "{ \"group\": \"nz.ac.waikato.cms.weka\", \"artifact\": \"weka-stable\", \"version\": \"3.8.1\" }",
+                        "{ \"group\": \"com.android.support\", \"artifact\": \"appcompat-v7\", \"version\": \"28.0.0\", \"packaging\": \"aar\" }",
+                        "{ \"group\": \"com.google.android.gms\", \"artifact\": \"play-services-base\", \"version\": \"16.1.0\" }",
+                        "{ \"group\": \"org.apache.flink\", \"artifact\": \"flink-test-utils_2.12\", \"version\": \"1.8.0\" }",
+                        "{ \"group\": \"ch.epfl.scala\", \"artifact\": \"compiler-interface\", \"version\": \"1.3.0-M4+20-c8a2f9bd\" }",
+                        "{ \"group\": \"org.openjfx\", \"artifact\": \"javafx-base\", \"version\": \"11.0.1\" }",
+                        "{ \"group\": \"io.kubernetes\", \"artifact\": \"client-java\", \"version\": \"4.0.0-beta1\" }",
+                        "{ \"group\": \"com.google.ar.sceneform.ux\", \"artifact\": \"sceneform-ux\", \"version\": \"1.10.0\" }",
+                        "{ \"group\": \"com.github.oshi\", \"artifact\": \"oshi-parent\", \"version\": \"3.4.0\" }",
+                        "{ \"group\": \"com.github.spinalhdl\", \"artifact\": \"spinalhdl-core_2.11\", \"version\": \"1.3.6\" }",
+                        "{ \"group\": \"com.github.spinalhdl\", \"artifact\": \"spinalhdl-lib_2.11\", \"version\": \"1.3.6\" }",
+                        "{ \"group\": \"org.apache.kafka\", \"artifact\": \"kafka_2.11\", \"version\": \"2.1.1\" }",
+                        "{ \"group\": \"io.confluent\", \"artifact\": \"kafka-avro-serializer\", \"version\": \"5.0.1\" }"
+                    ],
+                    "fetch_sources": False,
+                    "generate_compat_repositories": True,
+                    "maven_install_json": "//:regression_testing_install.json",
+                    "override_targets": {
+                        "com.google.ar.sceneform:rendering": "@//tests/integration/override_targets:sceneform_rendering"
+                    },
+                    "strict_visibility": False
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@rules_jvm_external//:coursier.bzl%pinned_coursier_fetch",
+        "definition_information": "Call stack for the definition of repository 'policy_pinned_testing' which is a pinned_coursier_fetch (rule definition at /root/.cache/bazel/_bazel_root/896e039de1e50d7e2de0b14a9acf4028/external/rules_jvm_external/coursier.bzl:903:25):\n - /root/home/steve/examples/rules_jvm_external/defs.bzl:111:9\n - /root/home/steve/examples/rules_jvm_external/WORKSPACE:201:1",
+        "original_attributes": {
+            "name": "policy_pinned_testing",
+            "artifacts": [
+                "{ \"group\": \"com.google.cloud\", \"artifact\": \"google-cloud-storage\", \"version\": \"1.66.0\" }",
+                "{ \"group\": \"com.google.guava\", \"artifact\": \"guava\", \"version\": \"25.0-android\" }"
+            ],
+            "fetch_sources": False,
+            "generate_compat_repositories": False,
+            "maven_install_json": "//:policy_pinned_testing_install.json",
+            "override_targets": {},
+            "strict_visibility": False
+        },
+        "repositories": [
+            {
+                "rule_class": "@rules_jvm_external//:coursier.bzl%pinned_coursier_fetch",
+                "output_tree_hash": "b6c29ba946e7331ac23853892db594c571dc0e6916df12a7d73cb3a7620fb9e0",
+                "attributes": {
+                    "name": "policy_pinned_testing",
+                    "artifacts": [
+                        "{ \"group\": \"com.google.cloud\", \"artifact\": \"google-cloud-storage\", \"version\": \"1.66.0\" }",
+                        "{ \"group\": \"com.google.guava\", \"artifact\": \"guava\", \"version\": \"25.0-android\" }"
+                    ],
+                    "fetch_sources": False,
+                    "generate_compat_repositories": False,
+                    "maven_install_json": "//:policy_pinned_testing_install.json",
+                    "override_targets": {},
+                    "strict_visibility": False
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+        "definition_information": "Call stack for the definition of repository 'io_bazel_rules_kotlin' which is a http_archive (rule definition at /root/.cache/bazel/_bazel_root/896e039de1e50d7e2de0b14a9acf4028/external/bazel_tools/tools/build_defs/repo/http.bzl:292:16):\n - /root/home/steve/examples/rules_jvm_external/WORKSPACE:237:1",
+        "original_attributes": {
+            "name": "io_bazel_rules_kotlin",
+            "url": "https://github.com/bazelbuild/rules_kotlin/archive/9051eb053f9c958440603d557316a6e9fda14687.tar.gz",
+            "sha256": "c36e71eec84c0e17dd098143a9d93d5720e81b4db32bceaf2daf939252352727",
+            "strip_prefix": "rules_kotlin-9051eb053f9c958440603d557316a6e9fda14687"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+                "output_tree_hash": "8b558eefeb1f5778eaa419b56567abb0b41ada7ea8f74d2c86a44e37fc70dd18",
+                "attributes": {
+                    "url": "https://github.com/bazelbuild/rules_kotlin/archive/9051eb053f9c958440603d557316a6e9fda14687.tar.gz",
+                    "urls": [],
+                    "sha256": "c36e71eec84c0e17dd098143a9d93d5720e81b4db32bceaf2daf939252352727",
+                    "netrc": "",
+                    "canonical_id": "",
+                    "strip_prefix": "rules_kotlin-9051eb053f9c958440603d557316a6e9fda14687",
+                    "type": "",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0"
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "build_file_content": "",
+                    "workspace_file_content": "",
+                    "name": "io_bazel_rules_kotlin"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+        "definition_information": "Call stack for the definition of repository 'bazel_toolchains' which is a http_archive (rule definition at /root/.cache/bazel/_bazel_root/896e039de1e50d7e2de0b14a9acf4028/external/bazel_tools/tools/build_defs/repo/http.bzl:292:16):\n - /root/home/steve/examples/rules_jvm_external/WORKSPACE:252:1",
+        "original_attributes": {
+            "name": "bazel_toolchains",
+            "urls": [
+                "https://mirror.bazel.build/github.com/bazelbuild/bazel-toolchains/archive/0.28.2.tar.gz",
+                "https://github.com/bazelbuild/bazel-toolchains/archive/0.28.2.tar.gz"
+            ],
+            "sha256": "dcb58e7e5f0b4da54c6c5f8ebc65e63fcfb37414466010cf82ceff912162296e",
+            "strip_prefix": "bazel-toolchains-0.28.2"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+                "output_tree_hash": "5e050484d8c52fb64a4419f31716dbcac2a5e51b9862a519e2dccabbb52de629",
+                "attributes": {
+                    "url": "",
+                    "urls": [
+                        "https://mirror.bazel.build/github.com/bazelbuild/bazel-toolchains/archive/0.28.2.tar.gz",
+                        "https://github.com/bazelbuild/bazel-toolchains/archive/0.28.2.tar.gz"
+                    ],
+                    "sha256": "dcb58e7e5f0b4da54c6c5f8ebc65e63fcfb37414466010cf82ceff912162296e",
+                    "netrc": "",
+                    "canonical_id": "",
+                    "strip_prefix": "bazel-toolchains-0.28.2",
+                    "type": "",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0"
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "build_file_content": "",
+                    "workspace_file_content": "",
+                    "name": "bazel_toolchains"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+        "definition_information": "Call stack for the definition of repository 'rules_cc' which is a http_archive (rule definition at /root/.cache/bazel/_bazel_root/896e039de1e50d7e2de0b14a9acf4028/external/bazel_tools/tools/build_defs/repo/http.bzl:292:16):\n - /root/.cache/bazel/_bazel_root/896e039de1e50d7e2de0b14a9acf4028/external/bazel_tools/tools/build_defs/repo/utils.bzl:205:9\n - /DEFAULT.WORKSPACE.SUFFIX:302:1",
+        "original_attributes": {
+            "name": "rules_cc",
+            "urls": [
+                "https://mirror.bazel.build/github.com/bazelbuild/rules_cc/archive/0d5f3f2768c6ca2faca0079a997a97ce22997a0c.zip",
+                "https://github.com/bazelbuild/rules_cc/archive/0d5f3f2768c6ca2faca0079a997a97ce22997a0c.zip"
+            ],
+            "sha256": "36fa66d4d49debd71d05fba55c1353b522e8caef4a20f8080a3d17cdda001d89",
+            "strip_prefix": "rules_cc-0d5f3f2768c6ca2faca0079a997a97ce22997a0c"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+                "output_tree_hash": "7f487a4ba08b793dbab12253aa825d1877305e0e165c51a2e8213ce80590c6f6",
+                "attributes": {
+                    "url": "",
+                    "urls": [
+                        "https://mirror.bazel.build/github.com/bazelbuild/rules_cc/archive/0d5f3f2768c6ca2faca0079a997a97ce22997a0c.zip",
+                        "https://github.com/bazelbuild/rules_cc/archive/0d5f3f2768c6ca2faca0079a997a97ce22997a0c.zip"
+                    ],
+                    "sha256": "36fa66d4d49debd71d05fba55c1353b522e8caef4a20f8080a3d17cdda001d89",
+                    "netrc": "",
+                    "canonical_id": "",
+                    "strip_prefix": "rules_cc-0d5f3f2768c6ca2faca0079a997a97ce22997a0c",
+                    "type": "",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0"
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "build_file_content": "",
+                    "workspace_file_content": "",
+                    "name": "rules_cc"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "local_config_platform",
+        "original_attributes": {
+            "name": "local_config_platform"
+        },
+        "native": "local_config_platform(name = 'local_config_platform')"
+    },
+    {
+        "original_rule_class": "local_repository",
+        "original_attributes": {
+            "name": "platforms",
+            "path": "/root/.cache/bazel/_bazel_root/install/84defa6eb1e9416bf92d6f89ab2d4f31/platforms"
+        },
+        "native": "local_repository(name = \"platforms\", path = __embedded_dir__ + \"/\" + \"platforms\")"
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/sh:sh_configure.bzl%sh_config",
+        "definition_information": "Call stack for the definition of repository 'local_config_sh' which is a sh_config (rule definition at /root/.cache/bazel/_bazel_root/896e039de1e50d7e2de0b14a9acf4028/external/bazel_tools/tools/sh/sh_configure.bzl:72:13):\n - /root/.cache/bazel/_bazel_root/896e039de1e50d7e2de0b14a9acf4028/external/bazel_tools/tools/sh/sh_configure.bzl:83:5\n - /DEFAULT.WORKSPACE.SUFFIX:391:1",
+        "original_attributes": {
+            "name": "local_config_sh"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/sh:sh_configure.bzl%sh_config",
+                "output_tree_hash": "e36855460b514225eac75f4abe2cb992c5455b7077a9028d213d269d11490744",
+                "attributes": {
+                    "name": "local_config_sh"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+        "definition_information": "Call stack for the definition of repository 'rules_java' which is a http_archive (rule definition at /root/.cache/bazel/_bazel_root/896e039de1e50d7e2de0b14a9acf4028/external/bazel_tools/tools/build_defs/repo/http.bzl:292:16):\n - /root/.cache/bazel/_bazel_root/896e039de1e50d7e2de0b14a9acf4028/external/bazel_tools/tools/build_defs/repo/utils.bzl:205:9\n - /DEFAULT.WORKSPACE.SUFFIX:290:1",
+        "original_attributes": {
+            "name": "rules_java",
+            "urls": [
+                "https://mirror.bazel.build/github.com/bazelbuild/rules_java/archive/7cf3cefd652008d0a64a419c34c13bdca6c8f178.zip",
+                "https://github.com/bazelbuild/rules_java/archive/7cf3cefd652008d0a64a419c34c13bdca6c8f178.zip"
+            ],
+            "sha256": "bc81f1ba47ef5cc68ad32225c3d0e70b8c6f6077663835438da8d5733f917598",
+            "strip_prefix": "rules_java-7cf3cefd652008d0a64a419c34c13bdca6c8f178"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+                "output_tree_hash": "00a0f1231dacff0b0cea3886200e0158c67a3600068275da14120f5434f83b5e",
+                "attributes": {
+                    "url": "",
+                    "urls": [
+                        "https://mirror.bazel.build/github.com/bazelbuild/rules_java/archive/7cf3cefd652008d0a64a419c34c13bdca6c8f178.zip",
+                        "https://github.com/bazelbuild/rules_java/archive/7cf3cefd652008d0a64a419c34c13bdca6c8f178.zip"
+                    ],
+                    "sha256": "bc81f1ba47ef5cc68ad32225c3d0e70b8c6f6077663835438da8d5733f917598",
+                    "netrc": "",
+                    "canonical_id": "",
+                    "strip_prefix": "rules_java-7cf3cefd652008d0a64a419c34c13bdca6c8f178",
+                    "type": "",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0"
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "build_file_content": "",
+                    "workspace_file_content": "",
+                    "name": "rules_java"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/cpp:cc_configure.bzl%cc_autoconf_toolchains",
+        "definition_information": "Call stack for the definition of repository 'local_config_cc_toolchains' which is a cc_autoconf_toolchains (rule definition at /root/.cache/bazel/_bazel_root/896e039de1e50d7e2de0b14a9acf4028/external/bazel_tools/tools/cpp/cc_configure.bzl:79:26):\n - /root/.cache/bazel/_bazel_root/896e039de1e50d7e2de0b14a9acf4028/external/bazel_tools/tools/cpp/cc_configure.bzl:178:5\n - /DEFAULT.WORKSPACE.SUFFIX:385:1",
+        "original_attributes": {
+            "name": "local_config_cc_toolchains"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/cpp:cc_configure.bzl%cc_autoconf_toolchains",
+                "output_tree_hash": "1f5225797781e52701eedc83d3881885dbf142cf22222c8ef3b38c8a4b70070e",
+                "attributes": {
+                    "name": "local_config_cc_toolchains"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/cpp:cc_configure.bzl%cc_autoconf",
+        "definition_information": "Call stack for the definition of repository 'local_config_cc' which is a cc_autoconf (rule definition at /root/.cache/bazel/_bazel_root/896e039de1e50d7e2de0b14a9acf4028/external/bazel_tools/tools/cpp/cc_configure.bzl:143:15):\n - /root/.cache/bazel/_bazel_root/896e039de1e50d7e2de0b14a9acf4028/external/bazel_tools/tools/cpp/cc_configure.bzl:179:5\n - /DEFAULT.WORKSPACE.SUFFIX:385:1",
+        "original_attributes": {
+            "name": "local_config_cc"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/cpp:cc_configure.bzl%cc_autoconf",
+                "output_tree_hash": "8664050be20fcaadc4f3220b3cba71d195cad8770bae12aff76e1e98c70b3fa9",
+                "attributes": {
+                    "name": "local_config_cc"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@rules_jvm_external//:coursier.bzl%coursier_fetch",
+        "definition_information": "Call stack for the definition of repository 'exclusion_testing' which is a coursier_fetch (rule definition at /root/.cache/bazel/_bazel_root/896e039de1e50d7e2de0b14a9acf4028/external/rules_jvm_external/coursier.bzl:924:18):\n - /root/home/steve/examples/rules_jvm_external/defs.bzl:89:5\n - /root/home/steve/examples/rules_jvm_external/WORKSPACE:94:1",
+        "original_attributes": {
+            "name": "exclusion_testing",
+            "repositories": [
+                "{ \"repo_url\": \"https://repo1.maven.org/maven2\" }"
+            ],
+            "artifacts": [
+                "{ \"group\": \"com.google.guava\", \"artifact\": \"guava\", \"version\": \"27.0-jre\", \"exclusions\": [{ \"group\": \"org.codehaus.mojo\", \"artifact\": \"animal-sniffer-annotations\" }, { \"group\": \"com.google.j2objc\", \"artifact\": \"j2objc-annotations\" }] }"
+            ],
+            "fail_on_missing_checksum": True,
+            "fetch_sources": False,
+            "use_unsafe_shared_cache": False,
+            "excluded_artifacts": [],
+            "generate_compat_repositories": False,
+            "version_conflict_policy": "default",
+            "override_targets": {},
+            "strict_visibility": False,
+            "resolve_timeout": 600
+        },
+        "repositories": [
+            {
+                "rule_class": "@rules_jvm_external//:coursier.bzl%coursier_fetch",
+                "output_tree_hash": "2d675e2c516e0a9d7829a79846a280e1f7e0073bda301d97c85af77fe0b71434",
+                "attributes": {
+                    "name": "exclusion_testing",
+                    "repositories": [
+                        "{ \"repo_url\": \"https://repo1.maven.org/maven2\" }"
+                    ],
+                    "artifacts": [
+                        "{ \"group\": \"com.google.guava\", \"artifact\": \"guava\", \"version\": \"27.0-jre\", \"exclusions\": [{ \"group\": \"org.codehaus.mojo\", \"artifact\": \"animal-sniffer-annotations\" }, { \"group\": \"com.google.j2objc\", \"artifact\": \"j2objc-annotations\" }] }"
+                    ],
+                    "fail_on_missing_checksum": True,
+                    "fetch_sources": False,
+                    "use_unsafe_shared_cache": False,
+                    "excluded_artifacts": [],
+                    "generate_compat_repositories": False,
+                    "version_conflict_policy": "default",
+                    "override_targets": {},
+                    "strict_visibility": False,
+                    "resolve_timeout": 600
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@rules_jvm_external//:coursier.bzl%coursier_fetch",
+        "definition_information": "Call stack for the definition of repository 'maven' which is a coursier_fetch (rule definition at /root/.cache/bazel/_bazel_root/896e039de1e50d7e2de0b14a9acf4028/external/rules_jvm_external/coursier.bzl:924:18):\n - /root/home/steve/examples/rules_jvm_external/defs.bzl:89:5\n - /root/home/steve/examples/rules_jvm_external/WORKSPACE:55:1",
+        "original_attributes": {
+            "name": "maven",
+            "repositories": [
+                "{ \"repo_url\": \"https://jcenter.bintray.com/\" }"
+            ],
+            "artifacts": [
+                "{ \"group\": \"com.google.guava\", \"artifact\": \"guava\", \"version\": \"27.0-jre\" }",
+                "{ \"group\": \"org.hamcrest\", \"artifact\": \"hamcrest-core\", \"version\": \"2.1\" }"
+            ],
+            "fail_on_missing_checksum": True,
+            "fetch_sources": False,
+            "use_unsafe_shared_cache": False,
+            "excluded_artifacts": [],
+            "generate_compat_repositories": False,
+            "version_conflict_policy": "default",
+            "override_targets": {},
+            "strict_visibility": False,
+            "resolve_timeout": 600
+        },
+        "repositories": [
+            {
+                "rule_class": "@rules_jvm_external//:coursier.bzl%coursier_fetch",
+                "output_tree_hash": "dd2432d864ba579eff647a94cf11e3b3c80f796b92c3eda7c5f723512bfddebb",
+                "attributes": {
+                    "name": "maven",
+                    "repositories": [
+                        "{ \"repo_url\": \"https://jcenter.bintray.com/\" }"
+                    ],
+                    "artifacts": [
+                        "{ \"group\": \"com.google.guava\", \"artifact\": \"guava\", \"version\": \"27.0-jre\" }",
+                        "{ \"group\": \"org.hamcrest\", \"artifact\": \"hamcrest-core\", \"version\": \"2.1\" }"
+                    ],
+                    "fail_on_missing_checksum": True,
+                    "fetch_sources": False,
+                    "use_unsafe_shared_cache": False,
+                    "excluded_artifacts": [],
+                    "generate_compat_repositories": False,
+                    "version_conflict_policy": "default",
+                    "override_targets": {},
+                    "strict_visibility": False,
+                    "resolve_timeout": 600
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "new_local_repository",
+        "original_attributes": {
+            "name": "local_jdk",
+            "path": "/usr/lib/jvm/java-8-openjdk-amd64",
+            "build_file": "/root/.cache/bazel/_bazel_root/install/84defa6eb1e9416bf92d6f89ab2d4f31/jdk.BUILD"
+        },
+        "native": "new_local_repository(name = \"local_jdk\", path = \"/usr/lib/jvm/java-8-openjdk-amd64\", build_file = __embedded_dir__ + \"/\" + \"jdk.BUILD\")"
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+        "definition_information": "Call stack for the definition of repository 'remote_coverage_tools' which is a http_archive (rule definition at /root/.cache/bazel/_bazel_root/896e039de1e50d7e2de0b14a9acf4028/external/bazel_tools/tools/build_defs/repo/http.bzl:292:16):\n - /DEFAULT.WORKSPACE.SUFFIX:9:1",
+        "original_attributes": {
+            "name": "remote_coverage_tools",
+            "urls": [
+                "https://mirror.bazel.build/bazel_coverage_output_generator/releases/coverage_output_generator-v2.0.zip"
+            ],
+            "sha256": "3a6951051272d51613ac4c77af6ce238a3db321bf06506fde1b8866eb18a89dd"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+                "output_tree_hash": "fa40af2b315e2284aa340216078571544d231ec39c554eb2ba29e5036a8b82a4",
+                "attributes": {
+                    "url": "",
+                    "urls": [
+                        "https://mirror.bazel.build/bazel_coverage_output_generator/releases/coverage_output_generator-v2.0.zip"
+                    ],
+                    "sha256": "3a6951051272d51613ac4c77af6ce238a3db321bf06506fde1b8866eb18a89dd",
+                    "netrc": "",
+                    "canonical_id": "",
+                    "strip_prefix": "",
+                    "type": "",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0"
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "build_file_content": "",
+                    "workspace_file_content": "",
+                    "name": "remote_coverage_tools"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+        "definition_information": "Call stack for the definition of repository 'remote_java_tools_linux' which is a http_archive (rule definition at /root/.cache/bazel/_bazel_root/896e039de1e50d7e2de0b14a9acf4028/external/bazel_tools/tools/build_defs/repo/http.bzl:292:16):\n - /root/.cache/bazel/_bazel_root/896e039de1e50d7e2de0b14a9acf4028/external/bazel_tools/tools/build_defs/repo/utils.bzl:205:9\n - /DEFAULT.WORKSPACE.SUFFIX:260:1",
+        "original_attributes": {
+            "name": "remote_java_tools_linux",
+            "urls": [
+                "https://mirror.bazel.build/bazel_java_tools/releases/javac11/v6.1/java_tools_javac11_linux-v6.1.zip",
+                "https://github.com/bazelbuild/java_tools/releases/download/javac11-v6.1/java_tools_javac11_linux-v6.1.zip"
+            ],
+            "sha256": "12f7940ed0bc4c2e82238951cdf19b4179c7dcc361d16fe40fe4266538fb4ac6"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+                "output_tree_hash": "73d8e7b1ff4623400c633a2e2c2a00756d62324e36c9f6edc580f50b42bbb06e",
+                "attributes": {
+                    "url": "",
+                    "urls": [
+                        "https://mirror.bazel.build/bazel_java_tools/releases/javac11/v6.1/java_tools_javac11_linux-v6.1.zip",
+                        "https://github.com/bazelbuild/java_tools/releases/download/javac11-v6.1/java_tools_javac11_linux-v6.1.zip"
+                    ],
+                    "sha256": "12f7940ed0bc4c2e82238951cdf19b4179c7dcc361d16fe40fe4266538fb4ac6",
+                    "netrc": "",
+                    "canonical_id": "",
+                    "strip_prefix": "",
+                    "type": "",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0"
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "build_file_content": "",
+                    "workspace_file_content": "",
+                    "name": "remote_java_tools_linux"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+        "definition_information": "Call stack for the definition of repository 'rules_proto' which is a http_archive (rule definition at /root/.cache/bazel/_bazel_root/896e039de1e50d7e2de0b14a9acf4028/external/bazel_tools/tools/build_defs/repo/http.bzl:292:16):\n - /root/.cache/bazel/_bazel_root/896e039de1e50d7e2de0b14a9acf4028/external/bazel_tools/tools/build_defs/repo/utils.bzl:205:9\n - /DEFAULT.WORKSPACE.SUFFIX:314:1",
+        "original_attributes": {
+            "name": "rules_proto",
+            "urls": [
+                "https://mirror.bazel.build/github.com/bazelbuild/rules_proto/archive/97d8af4dc474595af3900dd85cb3a29ad28cc313.tar.gz",
+                "https://github.com/bazelbuild/rules_proto/archive/97d8af4dc474595af3900dd85cb3a29ad28cc313.tar.gz"
+            ],
+            "sha256": "602e7161d9195e50246177e7c55b2f39950a9cf7366f74ed5f22fd45750cd208",
+            "strip_prefix": "rules_proto-97d8af4dc474595af3900dd85cb3a29ad28cc313"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+                "output_tree_hash": "4f74a84e9684fc73c48656a9a6c60bdfaed2cabdf5dc7d21da7ae2ee78c7efa3",
+                "attributes": {
+                    "url": "",
+                    "urls": [
+                        "https://mirror.bazel.build/github.com/bazelbuild/rules_proto/archive/97d8af4dc474595af3900dd85cb3a29ad28cc313.tar.gz",
+                        "https://github.com/bazelbuild/rules_proto/archive/97d8af4dc474595af3900dd85cb3a29ad28cc313.tar.gz"
+                    ],
+                    "sha256": "602e7161d9195e50246177e7c55b2f39950a9cf7366f74ed5f22fd45750cd208",
+                    "netrc": "",
+                    "canonical_id": "",
+                    "strip_prefix": "rules_proto-97d8af4dc474595af3900dd85cb3a29ad28cc313",
+                    "type": "",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0"
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "build_file_content": "",
+                    "workspace_file_content": "",
+                    "name": "rules_proto"
+                }
+            }
+        ]
+    },
+    {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+        "definition_information": "Call stack for the definition of repository 'remotejdk11_linux' which is a http_archive (rule definition at /root/.cache/bazel/_bazel_root/896e039de1e50d7e2de0b14a9acf4028/external/bazel_tools/tools/build_defs/repo/http.bzl:292:16):\n - /root/.cache/bazel/_bazel_root/896e039de1e50d7e2de0b14a9acf4028/external/bazel_tools/tools/build_defs/repo/utils.bzl:205:9\n - /DEFAULT.WORKSPACE.SUFFIX:216:1",
+        "original_attributes": {
+            "name": "remotejdk11_linux",
+            "urls": [
+                "https://mirror.bazel.build/openjdk/azul-zulu11.2.3-jdk11.0.1/zulu11.2.3-jdk11.0.1-linux_x64.tar.gz"
+            ],
+            "sha256": "232b1c3511f0d26e92582b7c3cc363be7ac633e371854ca2f2e9f2b50eb72a75",
+            "strip_prefix": "zulu11.2.3-jdk11.0.1-linux_x64",
+            "build_file": "@local_jdk//:BUILD.bazel"
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+                "output_tree_hash": "41eeb95428accd781c6818d658697a95762c0d7d894e78d13dfb8bc72726e377",
+                "attributes": {
+                    "url": "",
+                    "urls": [
+                        "https://mirror.bazel.build/openjdk/azul-zulu11.2.3-jdk11.0.1/zulu11.2.3-jdk11.0.1-linux_x64.tar.gz"
+                    ],
+                    "sha256": "232b1c3511f0d26e92582b7c3cc363be7ac633e371854ca2f2e9f2b50eb72a75",
+                    "netrc": "",
+                    "canonical_id": "",
+                    "strip_prefix": "zulu11.2.3-jdk11.0.1-linux_x64",
+                    "type": "",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0"
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "build_file": "@local_jdk//:BUILD.bazel",
+                    "build_file_content": "",
+                    "workspace_file_content": "",
+                    "name": "remotejdk11_linux"
+                }
+            }
+        ]
+    }
+]

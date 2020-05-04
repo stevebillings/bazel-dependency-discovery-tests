@@ -1,0 +1,141 @@
+load("@bazel_skylib//:bzl_library.bzl", "bzl_library")
+load("@rules_python//python:defs.bzl", "py_binary")
+load(
+    "@rules_haskell//haskell:private/haskell_impl.bzl",
+    "haskell_toolchain_libraries",
+)
+load(
+    "@rules_haskell//haskell:private/cc_wrapper.bzl",
+    "cc_wrapper",
+)
+load(
+    "@rules_haskell//haskell:cabal_wrapper.bzl",
+    "cabal_wrapper",
+)
+load(
+    "@rules_haskell//haskell:toolchain_info.bzl",
+    "haskell_toolchain_info",
+)
+
+exports_files(
+    glob(["*.bzl"]) + [
+        "assets/ghci_script",
+        "private/cabal_wrapper.sh.tpl",
+        "private/cabal_wrapper.py.tpl",
+        "private/coverage_wrapper.sh.tpl",
+        "private/ghci_repl_wrapper.sh",
+        "private/haddock_wrapper.sh.tpl",
+        "private/cc_wrapper.py.tpl",
+        "private/cc_wrapper_windows.sh.tpl",
+        "private/pkgdb_to_bzl.py",
+    ],
+)
+
+# to make functions visible to unit tests
+exports_files(
+    ["private/actions/link.bzl"],
+    visibility = ["//tests/unit-tests:__pkg__"],
+)
+
+exports_files(
+    ["private/ghc_wrapper.sh"],
+    visibility = ["//tests/shellcheck:__pkg__"],
+)
+
+# @bazel_tools//tools does not define a bzl_library itself, instead we are
+# supposed to define our own using the @bazel_tools//tools:bzl_srcs filegroup.
+# See https://github.com/bazelbuild/skydoc/issues/166
+bzl_library(
+    name = "bazel_tools",
+    srcs = [
+        "@bazel_tools//tools:bzl_srcs",
+    ],
+)
+
+bzl_library(
+    name = "haskell",
+    srcs = glob(["**/*.bzl"]),
+    visibility = ["//visibility:public"],
+    deps = [
+        ":bazel_tools",
+        "@bazel_skylib//lib:collections",
+        "@bazel_skylib//lib:dicts",
+        "@bazel_skylib//lib:paths",
+        "@bazel_skylib//lib:shell",
+        "@io_tweag_rules_nixpkgs//nixpkgs",
+        "@rules_sh//sh:posix",
+    ],
+)
+
+cc_wrapper(
+    name = "cc_wrapper",
+    visibility = ["//visibility:public"],
+)
+
+cabal_wrapper(
+    name = "cabal_wrapper",
+    visibility = ["//visibility:public"],
+)
+
+py_binary(
+    name = "pkgdb_to_bzl",
+    srcs = ["private/pkgdb_to_bzl.py"],
+    visibility = ["//visibility:public"],
+)
+
+py_binary(
+    name = "ls_modules",
+    srcs = ["private/ls_modules.py"],
+    visibility = ["//visibility:public"],
+)
+
+sh_binary(
+    name = "ghc_wrapper",
+    srcs = ["private/ghc_wrapper.sh"],
+    visibility = ["//visibility:public"],
+)
+
+py_binary(
+    name = "version_macros",
+    srcs = ["private/version_macros.py"],
+    visibility = ["//visibility:public"],
+)
+
+# generate the _GHC_BINDISTS dict
+py_binary(
+    name = "gen-ghc-bindist",
+    srcs = [":gen_ghc_bindist.py"],
+    main = ":gen_ghc_bindist.py",
+    visibility = ["//visibility:public"],
+)
+
+# toolchains must have a valid toolchain_type from bazel 0.21
+toolchain_type(
+    name = "toolchain",
+    visibility = ["//visibility:public"],
+)
+
+toolchain_type(
+    name = "doctest-toolchain",
+    visibility = ["//visibility:public"],
+)
+
+# XXX: This target is a work-around for toolchain transitions not being
+# implemented, yet. See
+# https://github.com/bazelbuild/proposals/blob/master/designs/2019-02-12-toolchain-transitions.md
+# This will need to be revisited once that proposal is implemented.
+haskell_toolchain_libraries(
+    name = "toolchain-libraries",
+    visibility = ["//visibility:public"],
+)
+
+config_setting(
+    name = "use_worker",
+    define_values = {
+        "use_worker": "True",
+    },
+)
+
+haskell_toolchain_info(
+    name = "toolchain_info",
+)

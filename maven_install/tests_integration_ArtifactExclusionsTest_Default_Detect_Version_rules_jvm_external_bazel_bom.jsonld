@@ -1,0 +1,227 @@
+[
+  {
+    "specVersion": "1.1.0",
+    "spdx:name": "tests_integration_ArtifactExclusionsTest/Default Detect Version/rules_jvm_external bazel/bom",
+    "creationInfo": {
+      "spdx:creator": [
+        "Tool: Detect-6.2.0-SIGQA7-SNAPSHOT",
+        "Tool: IntegrationBdio-20.0.0"
+      ],
+      "spdx:created": "2020-03-17T17:33:20.502Z"
+    },
+    "@id": "uuid:6bd3e0db-8014-4034-9577-675170bbcee6",
+    "@type": "BillOfMaterials",
+    "relationship": []
+  },
+  {
+    "name": "tests_integration_ArtifactExclusionsTest",
+    "revision": "Default Detect Version",
+    "@id": "http:detect/rules_jvm_external",
+    "@type": "Project",
+    "externalIdentifier": {
+      "externalSystemTypeId": "detect",
+      "externalId": "rules_jvm_external",
+      "externalIdMetaData": {
+        "forge": {
+          "name": "detect",
+          "separator": "/"
+        },
+        "path": "rules_jvm_external"
+      }
+    },
+    "relationship": [
+      {
+        "related": "http:maven/org.hamcrest/hamcrest-core/2.1",
+        "relationshipType": "DYNAMIC_LINK"
+      },
+      {
+        "related": "http:maven/org.checkerframework/checker-qual/2.5.2",
+        "relationshipType": "DYNAMIC_LINK"
+      },
+      {
+        "related": "http:maven/org.hamcrest/hamcrest/2.1",
+        "relationshipType": "DYNAMIC_LINK"
+      },
+      {
+        "related": "http:maven/com.google.guava/guava/27.0-jre",
+        "relationshipType": "DYNAMIC_LINK"
+      },
+      {
+        "related": "http:maven/com.google.guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava",
+        "relationshipType": "DYNAMIC_LINK"
+      },
+      {
+        "related": "http:maven/com.google.guava/failureaccess/1.0",
+        "relationshipType": "DYNAMIC_LINK"
+      },
+      {
+        "related": "http:maven/com.google.code.findbugs/jsr305/3.0.2",
+        "relationshipType": "DYNAMIC_LINK"
+      },
+      {
+        "related": "http:maven/com.google.errorprone/error_prone_annotations/2.2.0",
+        "relationshipType": "DYNAMIC_LINK"
+      }
+    ]
+  },
+  {
+    "name": "hamcrest-core",
+    "revision": "2.1",
+    "@id": "http:maven/org.hamcrest/hamcrest-core/2.1",
+    "@type": "Component",
+    "externalIdentifier": {
+      "externalSystemTypeId": "maven",
+      "externalId": "org.hamcrest:hamcrest-core:2.1",
+      "externalIdMetaData": {
+        "forge": {
+          "name": "maven",
+          "separator": ":"
+        },
+        "group": "org.hamcrest",
+        "name": "hamcrest-core",
+        "version": "2.1"
+      }
+    },
+    "relationship": []
+  },
+  {
+    "name": "checker-qual",
+    "revision": "2.5.2",
+    "@id": "http:maven/org.checkerframework/checker-qual/2.5.2",
+    "@type": "Component",
+    "externalIdentifier": {
+      "externalSystemTypeId": "maven",
+      "externalId": "org.checkerframework:checker-qual:2.5.2",
+      "externalIdMetaData": {
+        "forge": {
+          "name": "maven",
+          "separator": ":"
+        },
+        "group": "org.checkerframework",
+        "name": "checker-qual",
+        "version": "2.5.2"
+      }
+    },
+    "relationship": []
+  },
+  {
+    "name": "hamcrest",
+    "revision": "2.1",
+    "@id": "http:maven/org.hamcrest/hamcrest/2.1",
+    "@type": "Component",
+    "externalIdentifier": {
+      "externalSystemTypeId": "maven",
+      "externalId": "org.hamcrest:hamcrest:2.1",
+      "externalIdMetaData": {
+        "forge": {
+          "name": "maven",
+          "separator": ":"
+        },
+        "group": "org.hamcrest",
+        "name": "hamcrest",
+        "version": "2.1"
+      }
+    },
+    "relationship": []
+  },
+  {
+    "name": "guava",
+    "revision": "27.0-jre",
+    "@id": "http:maven/com.google.guava/guava/27.0-jre",
+    "@type": "Component",
+    "externalIdentifier": {
+      "externalSystemTypeId": "maven",
+      "externalId": "com.google.guava:guava:27.0-jre",
+      "externalIdMetaData": {
+        "forge": {
+          "name": "maven",
+          "separator": ":"
+        },
+        "group": "com.google.guava",
+        "name": "guava",
+        "version": "27.0-jre"
+      }
+    },
+    "relationship": []
+  },
+  {
+    "name": "listenablefuture",
+    "revision": "9999.0-empty-to-avoid-conflict-with-guava",
+    "@id": "http:maven/com.google.guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava",
+    "@type": "Component",
+    "externalIdentifier": {
+      "externalSystemTypeId": "maven",
+      "externalId": "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+      "externalIdMetaData": {
+        "forge": {
+          "name": "maven",
+          "separator": ":"
+        },
+        "group": "com.google.guava",
+        "name": "listenablefuture",
+        "version": "9999.0-empty-to-avoid-conflict-with-guava"
+      }
+    },
+    "relationship": []
+  },
+  {
+    "name": "failureaccess",
+    "revision": "1.0",
+    "@id": "http:maven/com.google.guava/failureaccess/1.0",
+    "@type": "Component",
+    "externalIdentifier": {
+      "externalSystemTypeId": "maven",
+      "externalId": "com.google.guava:failureaccess:1.0",
+      "externalIdMetaData": {
+        "forge": {
+          "name": "maven",
+          "separator": ":"
+        },
+        "group": "com.google.guava",
+        "name": "failureaccess",
+        "version": "1.0"
+      }
+    },
+    "relationship": []
+  },
+  {
+    "name": "jsr305",
+    "revision": "3.0.2",
+    "@id": "http:maven/com.google.code.findbugs/jsr305/3.0.2",
+    "@type": "Component",
+    "externalIdentifier": {
+      "externalSystemTypeId": "maven",
+      "externalId": "com.google.code.findbugs:jsr305:3.0.2",
+      "externalIdMetaData": {
+        "forge": {
+          "name": "maven",
+          "separator": ":"
+        },
+        "group": "com.google.code.findbugs",
+        "name": "jsr305",
+        "version": "3.0.2"
+      }
+    },
+    "relationship": []
+  },
+  {
+    "name": "error_prone_annotations",
+    "revision": "2.2.0",
+    "@id": "http:maven/com.google.errorprone/error_prone_annotations/2.2.0",
+    "@type": "Component",
+    "externalIdentifier": {
+      "externalSystemTypeId": "maven",
+      "externalId": "com.google.errorprone:error_prone_annotations:2.2.0",
+      "externalIdMetaData": {
+        "forge": {
+          "name": "maven",
+          "separator": ":"
+        },
+        "group": "com.google.errorprone",
+        "name": "error_prone_annotations",
+        "version": "2.2.0"
+      }
+    },
+    "relationship": []
+  }
+]

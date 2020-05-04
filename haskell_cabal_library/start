@@ -1,0 +1,385 @@
+#!/usr/bin/env bash
+#
+# Checks the version of Bazel found in the PATH, and then initializes
+# a new Bazel workspace with dummy Haskell build targets.
+
+MIN_BAZEL_MAJOR=0
+MIN_BAZEL_MINOR=29
+
+MAX_BAZEL_MAJOR=2
+MAX_BAZEL_MINOR=0
+
+set -e
+
+usage () {
+    cat >&2 <<"EOF"
+start [--use-bindists|--use-nix|--help]
+
+Set up a minimal rules_haskell bazel configuration.
+
+--use-bindists: The project is set up to provision GHC from binary distributions. This does not require nix to build.
+--use-nix: The project is set up to provision GHC from nixpkgs. This requires nix to build.
+
+If no argument is given, `--use-bindists` is assumed
+and a helpful message is printed that `--use-nix` also exists.
+
+For more information visit https://haskell.build/
+EOF
+    exit "$1"
+}
+
+# either bindists or nix
+mode=
+print_nix_usage_info="no"
+
+parse_args () {
+    if [ $# -lt 1 ]; then
+        mode="bindists"
+        print_nix_usage_info="yes"
+        return
+    fi
+
+    [ "$1" = "--help" ] && usage 0
+    case "$1" in
+        "--help") usage 0 ;;
+        "--use-bindists") mode="bindists" ;;
+        "--use-nix") mode="nix" ;;
+        *) usage 1 ;;
+    esac
+}
+
+check_files_dont_exist () {
+    if [ -e WORKSPACE ] || [ -e BUILD ] || [ -e BazelExample.hs ]
+    then
+        echo "Current directory already has WORKSPACE and/or BUILD and/or BazelExample.hs files." >&2
+        exit 1
+    fi
+}
+
+check_bazel_version () {
+    actual_raw=$(bazel version | grep -E '^Build label:' | grep -E -o '[0-9.]+')
+
+    # shellcheck disable=SC2034
+    IFS=. read -r actual_major actual_minor actual_patch <<EOF
+$actual_raw
+EOF
+
+    expected_min=$MIN_BAZEL_MAJOR.$MIN_BAZEL_MINOR.0
+    expected_max=$MAX_BAZEL_MAJOR.$MAX_BAZEL_MINOR.x
+
+    if [ "$actual_major" -gt "$MAX_BAZEL_MAJOR" ] || {
+        [ "$actual_major" -eq "$MAX_BAZEL_MAJOR" ] &&
+            [ "$actual_minor" -gt "$MAX_BAZEL_MINOR" ]
+         }
+    then
+	      echo "Warning: a too new version of Bazel detected: v${actual_raw}."  >&2
+	      echo "         Recommended versions are from v${expected_min} to v${expected_max}."  >&2
+    elif [ "$actual_major" -lt "$MIN_BAZEL_MAJOR" ] || {
+          [ "$actual_major" -eq "$MIN_BAZEL_MAJOR" ] &&
+            [ "$actual_minor" -lt "$MIN_BAZEL_MINOR" ]
+         }
+    then
+        echo "Error: Need at least Bazel v${expected_min} but v${actual_raw} detected." >&2
+        exit 1
+    fi
+}
+
+insert_if_equal () {
+    [ "$1" = "$2" ] && printf '%s' "$3"
+}
+
+parse_args "$@"
+
+if [ "$print_nix_usage_info" = "yes" ]; then
+    # shellcheck disable=SC2016
+    echo 'INFO: Creating a WORKSPACE file based on GHC bindists. If you want to use a nix-based setup (e.g. on NixOS), call with `--use-nix`. See `--help` for more info.' >&2
+fi
+
+check_files_dont_exist
+check_bazel_version
+
+bindist_toolchain=$(cat <<EOF
+# Download a GHC binary distribution from haskell.org and register it as a toolchain.
+rules_haskell_toolchains()
+EOF
+)
+
+nix_toolchain=$(cat <<EOF
+# Load nixpkgs_git_repository from rules_nixpkgs,
+# which was already initialized by rules_haskell_dependencies above.
+load(
+    "@io_tweag_rules_nixpkgs//nixpkgs:nixpkgs.bzl",
+    "nixpkgs_git_repository",
+    "nixpkgs_package",
+    "nixpkgs_python_configure",
+)
+
+nixpkgs_python_configure(
+    repository = "@nixpkgs",
+)
+
+# Fetch a version of nixpkgs from GitHub.
+# For more information see the documentation of rules_nixpkgs at
+# https://github.com/tweag/rules_nixpkgs/blob/master/README.md
+nixpkgs_git_repository(
+    name = "nixpkgs",
+    revision = "19.03",
+    # sha256 = …
+)
+
+load(
+    "@rules_haskell//haskell:nixpkgs.bzl",
+    "haskell_register_ghc_nixpkgs",
+)
+
+# Fetch a GHC binary distribution from nixpkgs and register it as a toolchain.
+# For more information:
+# https://api.haskell.build/haskell/nixpkgs.html#haskell_register_ghc_nixpkgs
+haskell_register_ghc_nixpkgs(
+    repository = "@nixpkgs",
+    attribute_path = "ghc",
+    version = "8.6.4",
+)
+EOF
+)
+
+declare -r ALEX_BUILD_FILE="alex.BUILD.bazel"
+declare -r ZLIB_BUILD_FILE="zlib.BUILD.bazel"
+
+echo "Creating $ZLIB_BUILD_FILE" >&2
+case "$mode" in
+    "bindists")
+
+    cat > "$ZLIB_BUILD_FILE" <<"EOF"
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+cc_library(
+    name = "zlib",
+    # Import ':z' as 'srcs' to enforce the library name 'libz.so'. Otherwise,
+    # Bazel would mangle the library name and e.g. Cabal wouldn't recognize it.
+    srcs = [":z"],
+    hdrs = glob(["*.h"]),
+    includes = ["."],
+    visibility = ["//visibility:public"],
+)
+cc_library(name = "z", srcs = glob(["*.c"]), hdrs = glob(["*.h"]))
+EOF
+    ;;
+
+    "nix")
+
+    cat > "$ZLIB_BUILD_FILE" <<"EOF"
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+filegroup(
+    name = "include",
+    srcs = glob(["include/*.h"]),
+    visibility = ["//visibility:public"],
+)
+cc_library(
+    name = "zlib",
+    srcs = ["@nixpkgs_zlib//:lib"],
+    hdrs = [":include"],
+    strip_include_prefix = "include",
+    visibility = ["//visibility:public"],
+)
+EOF
+esac
+
+bindist_zlib=$(cat <<EOF
+http_archive(
+    name = "zlib.dev",
+    build_file = "//:$ZLIB_BUILD_FILE",
+    sha256 = "c3e5e9fdd5004dcb542feda5ee4f0ff0744628baf8ed2dd5d66f8ca1197cb1a1",
+    strip_prefix = "zlib-1.2.11",
+    urls = [
+        "https://mirror.bazel.build/zlib.net/zlib-1.2.11.tar.gz",
+        "http://zlib.net/zlib-1.2.11.tar.gz",
+    ],
+)
+EOF
+)
+
+nix_zlib=$(cat <<EOF
+# For $ZLIB_BUILD_FILE
+nixpkgs_package(
+    name = "nixpkgs_zlib",
+    attribute_path = "zlib",
+    repository = "@nixpkgs",
+)
+
+nixpkgs_package(
+    name = "zlib.dev",
+    build_file = "//:$ZLIB_BUILD_FILE",
+    repository = "@nixpkgs",
+)
+EOF
+)
+
+
+get_toolchain () {
+    case $mode in
+        bindists) printf '%s' "$bindist_toolchain" ;;
+        nix) printf '%s' "$nix_toolchain" ;;
+    esac
+}
+
+get_zlib () {
+    case $mode in
+        bindists) printf '%s' "$bindist_zlib" ;;
+        nix) printf '%s' "$nix_zlib" ;;
+    esac
+}
+
+echo "Creating WORKSPACE" >&2
+cat > WORKSPACE <<EOF
+# Give your project a name. :)
+workspace(name = "YOUR_PROJECT_NAME_HERE")
+
+# Load the repository rule to download an http archive.
+load(
+    "@bazel_tools//tools/build_defs/repo:http.bzl",
+    "http_archive"
+)
+
+# Download rules_haskell and make it accessible as "@rules_haskell".
+http_archive(
+    name = "rules_haskell",
+    strip_prefix = "rules_haskell-0.12",
+    urls = ["https://github.com/tweag/rules_haskell/archive/v0.12.tar.gz"],
+    sha256 = "56a8e6337df8802f1e0e7d2b3d12d12d5d96c929c8daecccc5738a0f41d9c1e4",
+)
+
+load(
+    "@rules_haskell//haskell:repositories.bzl",
+    "rules_haskell_dependencies",
+)
+
+# Setup all Bazel dependencies required by rules_haskell.
+rules_haskell_dependencies()
+
+load(
+    "@rules_haskell//haskell:toolchain.bzl",
+    "rules_haskell_toolchains",
+)
+
+# Download alex and make it accessible as @alex.
+# Delete this block, alex.BUILD.bazel, and the reference in
+# stack_snapshot's tools if you don't use alex.
+http_archive(
+    name = "alex",
+    build_file = "//:$ALEX_BUILD_FILE",
+    sha256 = "d58e4d708b14ff332a8a8edad4fa8989cb6a9f518a7c6834e96281ac5f8ff232",
+    strip_prefix = "alex-3.2.4",
+    urls = ["http://hackage.haskell.org/package/alex-3.2.4/alex-3.2.4.tar.gz"],
+)
+
+load(
+    "@rules_haskell//haskell:cabal.bzl",
+    "stack_snapshot"
+)
+
+stack_snapshot(
+    name = "stackage",
+    extra_deps = {"zlib": ["@zlib.dev//:zlib"]},
+    packages = ["zlib"],
+    tools = [ "@alex" ],
+    snapshot = "lts-14.27", # Last snapshot published for ghc-8.6.5
+    # the default version picked up by rules_haskell
+)
+
+$(get_toolchain)
+
+$(get_zlib)
+EOF
+
+echo "Creating $ALEX_BUILD_FILE" >&2
+cat > "$ALEX_BUILD_FILE" <<EOF
+load("@rules_haskell//haskell:cabal.bzl", "haskell_cabal_binary")
+
+haskell_cabal_binary(
+    name = "alex",
+    srcs = glob(["**"]),
+    verbose = False,
+    visibility = ["//visibility:public"],
+)
+EOF
+
+echo "Creating .bazelrc" >&2
+cat > .bazelrc <<EOF
+build:ci --loading_phase_threads=1
+build:ci --jobs=2
+build:ci --verbose_failures
+common:ci --color=no
+test:ci --test_output=errors
+
+$(insert_if_equal $mode "nix" '
+# This project uses a GHC provisioned via nix.
+# We need to use the rules_haskell nix toolchain accordingly:
+build --host_platform=@rules_haskell//haskell/platforms:linux_x86_64_nixpkgs
+run --host_platform=@rules_haskell//haskell/platforms:linux_x86_64_nixpkgs'
+)
+
+# test environment does not propagate locales by default
+# some tests reads files written in UTF8, we need to propagate the correct
+# environment variables, such as LOCALE_ARCHIVE
+# We also need to setup an utf8 locale
+test --test_env=LANG=en_US.utf8 --test_env=LOCALE_ARCHIVE
+
+try-import .bazelrc.local
+EOF
+
+echo "Creating BUILD.bazel" >&2
+cat > BUILD.bazel <<"EOF"
+# Set all target’s visibility in this package to "public".
+package(default_visibility = ["//visibility:public"])
+
+# Load rules_haskell rules.
+load(
+    "@rules_haskell//haskell:defs.bzl",
+    "haskell_toolchain_library",
+    "haskell_library",
+    "haskell_binary",
+)
+
+# haskell_toolchain_library can access builtin GHC packages
+# and assign them a bazel target name, so that they
+# can be referenced as dependencies.
+haskell_toolchain_library(name = "base")
+
+# You can add your own libraries with haskell_library.
+# haskell_library(
+#     name = "MY_LIBRARY_NAME",
+#     src_strip_prefix = "src",
+#     srcs = glob(['src/**/*.hs']),
+#     deps = [
+#         "base_pkg"
+#     ],
+# )
+
+# An example binary using the Prelude module from the
+# GHC base package, and zlib from stackage, to print the hello world.
+haskell_binary(
+    name = "example",
+    srcs = [":Example.hs"],
+    deps = [":base", "@stackage//:zlib"],
+)
+EOF
+
+echo "Creating Example.hs" >&2
+cat > Example.hs <<"EOF"
+module Main where
+
+import Codec.Compression.Zlib (compress, decompress)
+import Prelude ((.), putStrLn)
+
+main = putStrLn "Hello from rules_haskell!"
+
+slowId = decompress . compress
+EOF
+
+cat >&2 <<"EOF"
+WORKSPACE and initial BUILD files created. To run Bazel and build the example:
+
+    $ bazel run //:example
+EOF

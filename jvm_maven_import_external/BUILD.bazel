@@ -1,0 +1,19 @@
+config_setting(
+    name = "old_n_busted",
+    define_values = {"old_n_busted": "true"},
+)
+
+config_setting(
+    name = "new_hotness",
+    define_values = {"new_hotness": "true"},
+)
+
+java_library(
+    name = "build_configuration",
+    srcs = glob(["src/main/java/**/*.java"]),
+    deps = select({
+        ":old_n_busted": ["@commons_collections"],
+        ":new_hotness": ["@commons_collections4"],
+        "//conditions:default": [],
+    }),
+)

@@ -1,0 +1,58 @@
+load(
+    "@rules_haskell//haskell:defs.bzl",
+    "haskell_library",
+    "haskell_test",
+    "haskell_toolchain_library",
+)
+
+haskell_toolchain_library(name = "base")
+
+haskell_toolchain_library(name = "directory")
+
+haskell_toolchain_library(name = "filepath")
+
+haskell_toolchain_library(name = "process")
+
+haskell_toolchain_library(name = "transformers")
+
+haskell_library(
+    name = "runfiles",
+    srcs = ["src/Bazel/Runfiles.hs"],
+    src_strip_prefix = "src",
+    visibility = ["//visibility:public"],
+    deps = [
+        ":base",
+        ":directory",
+        ":filepath",
+        ":transformers",
+    ],
+)
+
+haskell_test(
+    name = "bin",
+    testonly = 1,
+    srcs = ["bin/Bin.hs"],
+    data = ["bin-data.txt"],
+    src_strip_prefix = "bin",
+    deps = [
+        ":base",
+        ":filepath",
+        ":runfiles",
+    ],
+)
+
+haskell_test(
+    name = "test",
+    srcs = ["test/Test.hs"],
+    data = [
+        "test-data.txt",
+        ":bin",
+    ],
+    src_strip_prefix = "test",
+    deps = [
+        ":base",
+        ":filepath",
+        ":process",
+        ":runfiles",
+    ],
+)
